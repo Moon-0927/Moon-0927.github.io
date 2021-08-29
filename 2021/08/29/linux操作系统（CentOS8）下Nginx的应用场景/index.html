@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cn" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>linux操作系统（CentOS8）下Nginx的应用场景 - 我在写诗</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="linux操作系统（CentOS8）下Nginx的应用...">
+  <meta name="author" content="Moon">
+  <link rel="icon" href="/images/icons/favicon-16x16new.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32new.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">linux操作系统（CentOS8）下Nginx的应用场景</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/20200729010443_sxkee.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">linux操作系统（CentOS8）下Nginx的应用场景</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>八月 29, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>7639</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h1 id="linux操作系统（CentOS8）下Nginx的应用场景"><a href="#linux操作系统（CentOS8）下Nginx的应用场景" class="headerlink" title="linux操作系统（CentOS8）下Nginx的应用场景"></a>linux操作系统（CentOS8）下Nginx的应用场景</h1><blockquote>
+<p><strong>一、作为web服务器，替代Apache</strong> </p>
+</blockquote>
+<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><p>&ensp;&ensp;&ensp;&ensp;<code>dnf install nginx</code>    #安装Nginx  </p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl start nginx </code>   #启动Nginx</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl enable nginx</code>    #开机自启</p>
+<h2 id="安装PHP和一些需要的扩展"><a href="#安装PHP和一些需要的扩展" class="headerlink" title="安装PHP和一些需要的扩展"></a>安装PHP和一些需要的扩展</h2><p>&ensp;&ensp;&ensp;&ensp;<code>dnf install php php-mysqlnd php-fpm php-opcache php-gd php-xml php-mbstring php-json</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;#启动php-fpm</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl start php-fpm </code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#开机自启</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl enable php-fpm</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#通过vim修改配置文件</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>vim /etc/php-fpm.d/www.conf</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#把文件中<code>user=apache, group=apache</code>，修改为 <code>user = nginx , group = nginx</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#重启php-fpm</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl restart php-fpm</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#修改文件的所有者</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>chown -R  nginx:nginx /usr/share/nginx/html</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#新建文件</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>vim /usr/share/nginx/html/test.php</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#写入代码</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>&lt;?php phpinfo(); ?&gt;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#重启Nginx,后访问test.php文件查看是正常显示</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl restart nginx</code></p>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><p>&ensp;&ensp;&ensp;&ensp;&gt; @mysql模块将安装具有所有依赖关系的最新版本的MySQL。</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>dnf install @mysql</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl start mysqld</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl enable mysqld</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#查看mysql是否启动成功</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl status mysqld</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#mysql安装配置</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>mysql_secure_installation</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#测试，通过密码连接数据库</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>mysql -u root -p</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;查看所有数据库：<code>show databases;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;进入mysql数据库： <code>use mysql;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;查看mysql数据库中所有表：<code>show tables;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;查看用户的host,用户，密码： <code>select host,user,authentication_string from user;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;执行修改root用户的密码： <code>update user set authentication_string = &#39;123&#39; where user = &#39;root&#39;;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;安装git</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>dnf install git-all</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;安装composer</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>php -r &quot;copy(&#39;</code><a target="_blank" rel="noopener" href="https://install.phpcomposer.com/installer">https://install.phpcomposer.com/installer</a><code>&#39;, &#39;composer-setup.php&#39;);&quot;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>php composer-setup.php</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>php -r &quot;unlink(&#39;composer-setup.php&#39;);&quot;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;### Mac 或 Linux 系统：<br />打开命令行窗口并执行如下命令将前面下载的 <code>composer.phar</code> 文件移动到 <code>/usr/local/bin/</code> 目录下面：<br />复制<br /><code>sudo mv composer.phar /usr/local/bin/composer</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>composer selfupdate</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;&gt; 二、作为代理服务应用</p>
+<p>&ensp;&ensp;&ensp;&ensp;正向代理：正向代理是对客户端设置代理地址后，通过将代理服务器的IP作为源IP访问互联网应用服务的代理方式。通过对正向代理访问设置，可以实现限制客户端的访问行为、下载速度、访问记录统计、隐藏客户端信息等目的。</p>
+<p>&ensp;&ensp;&ensp;&ensp;举例说明：</p>
+<p>&ensp;&ensp;&ensp;&ensp;假设有一个内网，内网有两台机器。这两台机器，只有 a 可以上网，b 不能上网，但是 a 和 b 通过网络相连接。这时，如果 b 想访问外网，就可以通过 a 来，正向代理访问外网。正向代理，就是在内网中，模拟目标服务器，把内网中，其它机器的请求，转发给外网中的，真正的目标服务器，所以，正向代理，是接受内网其它机器的请求的。</p>
+<p>&ensp;&ensp;&ensp;&ensp;1、HTTP的正向代理</p>
+<p>&ensp;&ensp;&ensp;&ensp;Nginx的proxy模块可以实现基础的HTTP代理功能。配制样例如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span> $host $deny&#123;</span><br><span class="line">  hostnames;</span><br><span class="line">  <span class="keyword">default</span> <span class="number">0</span>;</span><br><span class="line">  www.goole.com <span class="number">1</span>;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line"> listen <span class="number">8080</span>; #监听<span class="number">80</span>端口</span><br><span class="line"> resolver <span class="number">114.114</span><span class="number">.114</span><span class="number">.114</span>;</span><br><span class="line"> resolver_timeout <span class="number">30</span>s;  #DNS解析超时时长</span><br><span class="line"> access_log logs/proxy_access.<span class="built_in">log</span>; #记录访问日志</span><br><span class="line"> location / &#123;</span><br><span class="line">   <span class="keyword">if</span>($deny)&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">403</span>; #被禁止访问的网址返回<span class="number">403</span>错误</span><br><span class="line"> &#125;</span><br><span class="line"> proxy_limit_rate <span class="number">102400</span>; #限制客户端下的下载速率是<span class="number">100</span>KB/s</span><br><span class="line"> proxy_buffering on;      #启用代理缓冲</span><br><span class="line"> proxy_buffers <span class="number">8</span> <span class="number">8</span>k;      #代理缓存区大小为<span class="number">64</span>KB</span><br><span class="line"> proxy_buffer_size  <span class="number">8</span>k;   #响应数据第一部分的缓冲区大小为<span class="number">8</span>KB</span><br><span class="line"> proxy_busy_buffers_size <span class="number">16</span>k; #向客户端发送响应的缓冲区大小为<span class="number">16</span>KB</span><br><span class="line"> proxy_temp_file_write_size <span class="number">16</span>k; #第一次写入临时文件的数据大小为<span class="number">16</span>KB</span><br><span class="line"> </span><br><span class="line"> #设置所有代理客户端的agent</span><br><span class="line"> proxy_set_header User-Agent <span class="string">&quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN ; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14&quot;</span>;</span><br><span class="line"> </span><br><span class="line"> proxy_set_header Host $http_host;</span><br><span class="line"> proxy_connect_timeout <span class="number">70</span>s;     #代理连接超时时间</span><br><span class="line"> proxy_http_version <span class="number">1.1</span>;        #代理协议为http/<span class="number">1.1</span></span><br><span class="line"> proxy_pass $scheme:<span class="comment">//$http_host$request_uri;  #代理到远端服务器</span></span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>2、HTTP的反向代理</p>
+</blockquote>
+<p>反向代理：反向代理是用户客户端访问代理服务器后，被反向代理服务器软件按照一定的规则从一个或多个被代理服务器中获取响应资源并返回给客户端的代理模式。客户端只知道代理服务器的IP，并不知道后端服务器的IP。</p>
+<p>举个例子：</p>
+<p>假设也是一个内网，有几台机器，只有其中一台与外网连接。但是，反向代理接受的不是内网机器的访问请求，反向代理，接受的是外网过来的访问请求。然后把请求，转发到内网中的其它机器上去。外网发出请求的用户，并不知道反向代理的服务器把请求转发给了谁。</p>
+<p>为了方便反向代理的配置，通常新建一个新的配置文件，通过include指令引入,当然可以置入原有的配置文件当中，</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="meta">#user  nobody;</span></span><br><span class="line">worker_processes  <span class="number">1</span>;         #指定用户</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.<span class="built_in">log</span>;</span><br><span class="line">#error_log  logs/error.<span class="built_in">log</span>  notice;</span><br><span class="line">#error_log  logs/error.<span class="built_in">log</span>  info;  </span><br><span class="line"></span><br><span class="line"><span class="meta">#pid        logs/nginx.pid;        #指定进程，以上为全局配置</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  <span class="number">1024</span>;   #最大连接数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  <span class="string">&#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span></span><br><span class="line">    #                  <span class="string">&#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span></span><br><span class="line">    #                  <span class="string">&#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.<span class="built_in">log</span>  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  <span class="number">0</span>;</span><br><span class="line">    keepalive_timeout  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#gzip  on;              #以上为HTTP的全局配置</span></span><br><span class="line">    #配置不同的服务，<span class="number">80</span>为HTTP的默认端口</span><br><span class="line">    </span><br><span class="line">    upstream test&#123;</span><br><span class="line">           #负载均衡配置，复制服务器资源</span><br><span class="line">           server <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">80</span> weight=<span class="number">1</span>;    #当两个配置的权重一致，轮替执行</span><br><span class="line">           server <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">443</span> weight=<span class="number">1</span>;   #也可以是其他服务器</span><br><span class="line">        &#125;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       <span class="number">80</span>;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        #以下进行代理配置,我们首先负载均衡配置</span><br><span class="line">        <span class="meta">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.<span class="built_in">log</span>  main;</span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">            #配置代理</span><br><span class="line">            proxy_pass http:<span class="comment">//test;</span></span><br><span class="line">        &#125;</span><br><span class="line">          #error_page  <span class="number">404</span>              /<span class="number">404.</span>html;</span><br><span class="line"></span><br><span class="line">        <span class="meta"># redirect server <span class="meta-keyword">error</span> pages to the static page /50x.html</span></span><br><span class="line">        #</span><br><span class="line">        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">        location = /<span class="number">50</span>x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span></span><br><span class="line">        #</span><br><span class="line">        <span class="meta">#location ~ \.php$ &#123;</span></span><br><span class="line">        #    proxy_pass   http:<span class="comment">//127.0.0.1;</span></span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line">        #</span><br><span class="line">        <span class="meta">#location ~ \.php$ &#123;</span></span><br><span class="line">        <span class="meta">#    root           html;</span></span><br><span class="line">        #    fastcgi_pass   <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9000</span>;</span><br><span class="line">        #    fastcgi_index  index.php;</span><br><span class="line">        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">        <span class="meta">#    <span class="meta-keyword">include</span>        fastcgi_params;</span></span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta"># deny access to .htaccess files, <span class="meta-keyword">if</span> Apache<span class="meta-string">&#x27;s document root</span></span></span><br><span class="line"><span class="meta-string"><span class="meta">        # concurs with nginx&#x27;</span>s one</span></span><br><span class="line">        #</span><br><span class="line">        <span class="meta">#location ~ /\.ht &#123;</span></span><br><span class="line">        <span class="meta">#    deny  all;</span></span><br><span class="line">        #&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta"># another virtual host using mix of IP-, name-, and port-based configuration</span></span><br><span class="line">    #</span><br><span class="line">    <span class="meta">#server &#123;</span></span><br><span class="line">    <span class="meta">#    listen       8000;</span></span><br><span class="line">    <span class="meta">#    listen       somename:8080;</span></span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#    location / &#123;</span></span><br><span class="line">    <span class="meta">#        root   html;</span></span><br><span class="line">    <span class="meta">#        index  index.html index.htm;</span></span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    #</span><br><span class="line">    <span class="meta">#server &#123;</span></span><br><span class="line">    <span class="meta">#    listen       443 ssl;</span></span><br><span class="line">    #    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #    ssl_certificate      cert.pem;</span><br><span class="line">    #    ssl_certificate_key  cert.key;</span><br><span class="line"></span><br><span class="line">    #    ssl_session_cache    shared:SSL:<span class="number">1</span>m;</span><br><span class="line">    #    ssl_session_timeout  <span class="number">5</span>m;</span><br><span class="line"></span><br><span class="line">    #    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">    #    ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#    location / &#123;</span></span><br><span class="line">    <span class="meta">#        root   html;</span></span><br><span class="line">    <span class="meta">#        index  index.html index.htm;</span></span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>Moon</li>
+    <li><strong>本文链接：</strong><a href="http://www.moonlinku.com/2021/08/29/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88CentOS8%EF%BC%89%E4%B8%8BNginx%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/index.html" title="http:&#x2F;&#x2F;www.moonlinku.com&#x2F;2021&#x2F;08&#x2F;29&#x2F;linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88CentOS8%EF%BC%89%E4%B8%8BNginx%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF&#x2F;index.html">http:&#x2F;&#x2F;www.moonlinku.com&#x2F;2021&#x2F;08&#x2F;29&#x2F;linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88CentOS8%EF%BC%89%E4%B8%8BNginx%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2021/08/29/%E4%BD%BF%E7%94%A8Vue_cli%E5%88%9B%E5%BB%BAVue%E9%A1%B9%E7%9B%AE/">使用Vue cli创建Vue项目<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88CentOS8%EF%BC%89%E4%B8%8BNginx%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">linux操作系统（CentOS8）下Nginx的应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Nginx"><span class="toc-text">安装Nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85PHP%E5%92%8C%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-text">安装PHP和一些需要的扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85mysql"><span class="toc-text">安装mysql</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=1809620325 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://github.com/Moon-0927 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:moon00927@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
