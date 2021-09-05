@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/08/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>使用Vue cli创建Vue项目</title>
+    <url>/2021/08/29/%E4%BD%BF%E7%94%A8Vue_cli%E5%88%9B%E5%BB%BAVue%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="使用Vue-cli创建Vue项目"><a href="#使用Vue-cli创建Vue项目" class="headerlink" title="使用Vue cli创建Vue项目"></a>使用Vue cli创建Vue项目</h1><h3 id="第一步：安装node-js"><a href="#第一步：安装node-js" class="headerlink" title="第一步：安装node.js"></a>第一步：安装node.js</h3><p>安装node.js，从<a href="https://link.jianshu.com/?t=https://nodejs.org/en/http://">node.js官网</a>下载并安装node，安装过程很简单，一路“下一步”就可以了（傻瓜式安装）。安装完成之后，打开命令行工具(win+r，然后输入cmd)，输入 <code>node -v</code>，如下图，如果出现相应的版本号，则说明安装成功。</p>
+<h3 id="第二步：安装淘宝镜像"><a href="#第二步：安装淘宝镜像" class="headerlink" title="第二步：安装淘宝镜像"></a>第二步：安装淘宝镜像</h3><p>打开命令行工具，把这个（<code>npm install -g cnpm --registry= </code><a href="https://link.jianshu.com/?t=https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a>）复制（这里要手动复制就是用鼠标右键那个，具体为啥不多解释），安装这里是因为我们用的npm的服务器是外国，有的时候我们安装“依赖”的时候很很慢很慢超级慢，所以就用这个cnpm来安装我们说需要的“依赖”。安装完成之后输入 <code>cnpm -v</code>，如下图，如果出现相应的版本号，则说明安装成功。</p>
+<h3 id="第三步：安装vue-cli脚手架构建工具"><a href="#第三步：安装vue-cli脚手架构建工具" class="headerlink" title="第三步：安装vue-cli脚手架构建工具"></a>第三步：安装vue-cli脚手架构建工具</h3><p>打开命令行工具输入：<code>npm install vue-cli -g</code>，安装完成之后输入 <code>vue -V</code>（注意这里是大写的“V”），如下图，如果出现相应的版本号，则说明安装成功。</p>
+<p>通过以上三步，我们需要准备的环境和工具都准备好了，接下来就开始使用vue-cli来构建项目。</p>
+<h3 id="创建项目：vue-create-加项目名"><a href="#创建项目：vue-create-加项目名" class="headerlink" title="创建项目：vue create 加项目名"></a>创建项目：vue create 加项目名</h3><p><code>vue create hello-app</code></p>
+<p><img  src="https://img-blog.csdnimg.cn/067f344f55bb411381accd1ba268f32c.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p>选择预设<br><img  src="https://img-blog.csdnimg.cn/d24a4db95bc6454fba741cec9836cd9f.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/ae6a3761d51b4d3989cbfb70ab01ca92.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/3d336da87f2647f2be364d51504fbafb.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/d8ad70328ecf43fa82e7cfb3c22cdf71.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/79835b21878143f2b0c9e887c5c685a3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/90c25c13744643db8a9aa54465b419a2.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><img  src="https://img-blog.csdnimg.cn/b32c1805e2244046b1b778cec5645ba8.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>项目构建成功<br><img  src="https://img-blog.csdnimg.cn/bc9775a6809442fb866a52b3ea0350d0.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p>我们使用yarn启动项目</p>
+<p><code>yarn</code></p>
+<p><code>yarn serve</code></p>
+<p><img  src="https://img-blog.csdnimg.cn/a14c87c33ba6460cad34264395b0f3c1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>安装成功<br><img  src="https://img-blog.csdnimg.cn/e30012d37d12478590d9eedefdc78b12.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>引入element ui库</p>
+<p><code>vue add element-plus</code></p>
+<p><img  src="https://img-blog.csdnimg.cn/cff2529e8cf14abdb2226c36b5f551ae.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p>选择全面引用</p>
+<p><img  src="https://img-blog.csdnimg.cn/ea3fbf82e63648c9971fc64cca47636b.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>语言选择zh-cn</p>
+<p><img  src="https://img-blog.csdnimg.cn/e89223e9446949d6bfb7582e1b461977.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>关闭 serve。重新启动</p>
+<p><code>yarn serve</code></p>
+<p><img  src="https://img-blog.csdnimg.cn/dec5f274752a4c4a8f1cf2bf9bd6294d.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>在src文件夹下创建scss文件夹</p>
+<p><img  src="https://img-blog.csdnimg.cn/e4dc274d5e1a4d59b01483544216b480.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>移动文件至scss文件夹</p>
+<p><img  src="https://img-blog.csdnimg.cn/9b63d00e4f764dfbbc87e5c8540551fc.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p>修改scss文件路径</p>
+<p><img  src="https://img-blog.csdnimg.cn/aeed3dac42db46a093a4f41f53b3e0a3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p>更改App.vue,作为程序主入口</p>
+<p><img  src="https://img-blog.csdnimg.cn/bd948b996d8c4da292b1763986063d72.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>路由文件<br><img  src="https://img-blog.csdnimg.cn/258ca2e0706245b1be244bfc7659fa95.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70"  ><span class="image-caption">在这里插入图片描述</span><br>现在就可以访问两个页面了， / 和/about这两个页面<br><img  src="https://img-blog.csdnimg.cn/a17da65a2d8d495488dace4a68eab865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>linux操作系统（CentOS8）下Nginx的应用场景</title>
+    <url>/2021/08/29/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88CentOS8%EF%BC%89%E4%B8%8BNginx%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/</url>
+    <content><![CDATA[<h1 id="linux操作系统（CentOS8）下Nginx的应用场景"><a href="#linux操作系统（CentOS8）下Nginx的应用场景" class="headerlink" title="linux操作系统（CentOS8）下Nginx的应用场景"></a>linux操作系统（CentOS8）下Nginx的应用场景</h1><blockquote>
+<p><strong>一、作为web服务器，替代Apache</strong> </p>
+</blockquote>
+<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><p>&ensp;&ensp;&ensp;&ensp;<code>dnf install nginx</code>    #安装Nginx  </p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl start nginx </code>   #启动Nginx</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl enable nginx</code>    #开机自启</p>
+<h2 id="安装PHP和一些需要的扩展"><a href="#安装PHP和一些需要的扩展" class="headerlink" title="安装PHP和一些需要的扩展"></a>安装PHP和一些需要的扩展</h2><p>&ensp;&ensp;&ensp;&ensp;<code>dnf install php php-mysqlnd php-fpm php-opcache php-gd php-xml php-mbstring php-json</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;#启动php-fpm</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl start php-fpm </code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#开机自启</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl enable php-fpm</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#通过vim修改配置文件</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>vim /etc/php-fpm.d/www.conf</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#把文件中<code>user=apache, group=apache</code>，修改为 <code>user = nginx , group = nginx</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#重启php-fpm</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl restart php-fpm</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#修改文件的所有者</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>chown -R  nginx:nginx /usr/share/nginx/html</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#新建文件</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>vim /usr/share/nginx/html/test.php</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#写入代码</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>&lt;?php phpinfo(); ?&gt;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#重启Nginx,后访问test.php文件查看是正常显示</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl restart nginx</code></p>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><p>&ensp;&ensp;&ensp;&ensp;&gt; @mysql模块将安装具有所有依赖关系的最新版本的MySQL。</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>dnf install @mysql</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl start mysqld</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl enable mysqld</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#查看mysql是否启动成功</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>systemctl status mysqld</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#mysql安装配置</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>mysql_secure_installation</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;#测试，通过密码连接数据库</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>mysql -u root -p</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;查看所有数据库：<code>show databases;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;进入mysql数据库： <code>use mysql;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;查看mysql数据库中所有表：<code>show tables;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;查看用户的host,用户，密码： <code>select host,user,authentication_string from user;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;执行修改root用户的密码： <code>update user set authentication_string = &#39;123&#39; where user = &#39;root&#39;;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;安装git</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>dnf install git-all</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;安装composer</p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>php -r &quot;copy(&#39;</code><a href="https://install.phpcomposer.com/installer">https://install.phpcomposer.com/installer</a><code>&#39;, &#39;composer-setup.php&#39;);&quot;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>php composer-setup.php</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>php -r &quot;unlink(&#39;composer-setup.php&#39;);&quot;</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;### Mac 或 Linux 系统：<br />打开命令行窗口并执行如下命令将前面下载的 <code>composer.phar</code> 文件移动到 <code>/usr/local/bin/</code> 目录下面：<br />复制<br /><code>sudo mv composer.phar /usr/local/bin/composer</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;<code>composer selfupdate</code></p>
+<p>&ensp;&ensp;&ensp;&ensp;&gt; 二、作为代理服务应用</p>
+<p>&ensp;&ensp;&ensp;&ensp;正向代理：正向代理是对客户端设置代理地址后，通过将代理服务器的IP作为源IP访问互联网应用服务的代理方式。通过对正向代理访问设置，可以实现限制客户端的访问行为、下载速度、访问记录统计、隐藏客户端信息等目的。</p>
+<p>&ensp;&ensp;&ensp;&ensp;举例说明：</p>
+<p>&ensp;&ensp;&ensp;&ensp;假设有一个内网，内网有两台机器。这两台机器，只有 a 可以上网，b 不能上网，但是 a 和 b 通过网络相连接。这时，如果 b 想访问外网，就可以通过 a 来，正向代理访问外网。正向代理，就是在内网中，模拟目标服务器，把内网中，其它机器的请求，转发给外网中的，真正的目标服务器，所以，正向代理，是接受内网其它机器的请求的。</p>
+<p>&ensp;&ensp;&ensp;&ensp;1、HTTP的正向代理</p>
+<p>&ensp;&ensp;&ensp;&ensp;Nginx的proxy模块可以实现基础的HTTP代理功能。配制样例如下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">map</span> $host $deny&#123;</span><br><span class="line">  hostnames;</span><br><span class="line">  <span class="keyword">default</span> <span class="number">0</span>;</span><br><span class="line">  www.goole.com <span class="number">1</span>;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line"> listen <span class="number">8080</span>; #监听<span class="number">80</span>端口</span><br><span class="line"> resolver <span class="number">114.114</span><span class="number">.114</span><span class="number">.114</span>;</span><br><span class="line"> resolver_timeout <span class="number">30</span>s;  #DNS解析超时时长</span><br><span class="line"> access_log logs/proxy_access.<span class="built_in">log</span>; #记录访问日志</span><br><span class="line"> location / &#123;</span><br><span class="line">   <span class="keyword">if</span>($deny)&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">403</span>; #被禁止访问的网址返回<span class="number">403</span>错误</span><br><span class="line"> &#125;</span><br><span class="line"> proxy_limit_rate <span class="number">102400</span>; #限制客户端下的下载速率是<span class="number">100</span>KB/s</span><br><span class="line"> proxy_buffering on;      #启用代理缓冲</span><br><span class="line"> proxy_buffers <span class="number">8</span> <span class="number">8</span>k;      #代理缓存区大小为<span class="number">64</span>KB</span><br><span class="line"> proxy_buffer_size  <span class="number">8</span>k;   #响应数据第一部分的缓冲区大小为<span class="number">8</span>KB</span><br><span class="line"> proxy_busy_buffers_size <span class="number">16</span>k; #向客户端发送响应的缓冲区大小为<span class="number">16</span>KB</span><br><span class="line"> proxy_temp_file_write_size <span class="number">16</span>k; #第一次写入临时文件的数据大小为<span class="number">16</span>KB</span><br><span class="line"> </span><br><span class="line"> #设置所有代理客户端的agent</span><br><span class="line"> proxy_set_header User-Agent <span class="string">&quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN ; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14&quot;</span>;</span><br><span class="line"> </span><br><span class="line"> proxy_set_header Host $http_host;</span><br><span class="line"> proxy_connect_timeout <span class="number">70</span>s;     #代理连接超时时间</span><br><span class="line"> proxy_http_version <span class="number">1.1</span>;        #代理协议为http/<span class="number">1.1</span></span><br><span class="line"> proxy_pass $scheme:<span class="comment">//$http_host$request_uri;  #代理到远端服务器</span></span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>2、HTTP的反向代理</p>
+</blockquote>
+<p>反向代理：反向代理是用户客户端访问代理服务器后，被反向代理服务器软件按照一定的规则从一个或多个被代理服务器中获取响应资源并返回给客户端的代理模式。客户端只知道代理服务器的IP，并不知道后端服务器的IP。</p>
+<p>举个例子：</p>
+<p>假设也是一个内网，有几台机器，只有其中一台与外网连接。但是，反向代理接受的不是内网机器的访问请求，反向代理，接受的是外网过来的访问请求。然后把请求，转发到内网中的其它机器上去。外网发出请求的用户，并不知道反向代理的服务器把请求转发给了谁。</p>
+<p>为了方便反向代理的配置，通常新建一个新的配置文件，通过include指令引入,当然可以置入原有的配置文件当中，</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="meta">#user  nobody;</span></span><br><span class="line">worker_processes  <span class="number">1</span>;         #指定用户</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.<span class="built_in">log</span>;</span><br><span class="line">#error_log  logs/error.<span class="built_in">log</span>  notice;</span><br><span class="line">#error_log  logs/error.<span class="built_in">log</span>  info;  </span><br><span class="line"></span><br><span class="line"><span class="meta">#pid        logs/nginx.pid;        #指定进程，以上为全局配置</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  <span class="number">1024</span>;   #最大连接数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  <span class="string">&#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span></span><br><span class="line">    #                  <span class="string">&#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span></span><br><span class="line">    #                  <span class="string">&#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.<span class="built_in">log</span>  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  <span class="number">0</span>;</span><br><span class="line">    keepalive_timeout  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#gzip  on;              #以上为HTTP的全局配置</span></span><br><span class="line">    #配置不同的服务，<span class="number">80</span>为HTTP的默认端口</span><br><span class="line">    </span><br><span class="line">    upstream test&#123;</span><br><span class="line">           #负载均衡配置，复制服务器资源</span><br><span class="line">           server <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">80</span> weight=<span class="number">1</span>;    #当两个配置的权重一致，轮替执行</span><br><span class="line">           server <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">443</span> weight=<span class="number">1</span>;   #也可以是其他服务器</span><br><span class="line">        &#125;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       <span class="number">80</span>;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        #以下进行代理配置,我们首先负载均衡配置</span><br><span class="line">        <span class="meta">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.<span class="built_in">log</span>  main;</span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">            #配置代理</span><br><span class="line">            proxy_pass http:<span class="comment">//test;</span></span><br><span class="line">        &#125;</span><br><span class="line">          #error_page  <span class="number">404</span>              /<span class="number">404.</span>html;</span><br><span class="line"></span><br><span class="line">        <span class="meta"># redirect server <span class="meta-keyword">error</span> pages to the static page /50x.html</span></span><br><span class="line">        #</span><br><span class="line">        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">        location = /<span class="number">50</span>x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span></span><br><span class="line">        #</span><br><span class="line">        <span class="meta">#location ~ \.php$ &#123;</span></span><br><span class="line">        #    proxy_pass   http:<span class="comment">//127.0.0.1;</span></span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line">        #</span><br><span class="line">        <span class="meta">#location ~ \.php$ &#123;</span></span><br><span class="line">        <span class="meta">#    root           html;</span></span><br><span class="line">        #    fastcgi_pass   <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9000</span>;</span><br><span class="line">        #    fastcgi_index  index.php;</span><br><span class="line">        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">        <span class="meta">#    <span class="meta-keyword">include</span>        fastcgi_params;</span></span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta"># deny access to .htaccess files, <span class="meta-keyword">if</span> Apache<span class="meta-string">&#x27;s document root</span></span></span><br><span class="line"><span class="meta-string"><span class="meta">        # concurs with nginx&#x27;</span>s one</span></span><br><span class="line">        #</span><br><span class="line">        <span class="meta">#location ~ /\.ht &#123;</span></span><br><span class="line">        <span class="meta">#    deny  all;</span></span><br><span class="line">        #&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta"># another virtual host using mix of IP-, name-, and port-based configuration</span></span><br><span class="line">    #</span><br><span class="line">    <span class="meta">#server &#123;</span></span><br><span class="line">    <span class="meta">#    listen       8000;</span></span><br><span class="line">    <span class="meta">#    listen       somename:8080;</span></span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#    location / &#123;</span></span><br><span class="line">    <span class="meta">#        root   html;</span></span><br><span class="line">    <span class="meta">#        index  index.html index.htm;</span></span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    #</span><br><span class="line">    <span class="meta">#server &#123;</span></span><br><span class="line">    <span class="meta">#    listen       443 ssl;</span></span><br><span class="line">    #    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #    ssl_certificate      cert.pem;</span><br><span class="line">    #    ssl_certificate_key  cert.key;</span><br><span class="line"></span><br><span class="line">    #    ssl_session_cache    shared:SSL:<span class="number">1</span>m;</span><br><span class="line">    #    ssl_session_timeout  <span class="number">5</span>m;</span><br><span class="line"></span><br><span class="line">    #    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">    #    ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#    location / &#123;</span></span><br><span class="line">    <span class="meta">#        root   html;</span></span><br><span class="line">    <span class="meta">#        index  index.html index.htm;</span></span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>Postman安装与基本操作</title>
+    <url>/2021/08/30/Postman%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p><strong>Postman下载安装</strong></p>
+<p><strong>Postman下载</strong></p>
+<p>Postman分为Postman native app 和Postman Chrome app两个版本。</p>
+<p>目前Chrome app已经停止维护，官方也不推荐使用该版本。</p>
+<p>因此建议大家直接选择native app进行下载</p>
+<p>下载：<a href="https://www.postman.com/downloads/">https://www.postman.com/downloads/</a></p>
+<p>根据自己的操作系统选择对应版本。</p>
+<p><strong>Postman安装</strong></p>
+<p>下载完成后的exe文件直接双击运行，按提示逐步完成安装即可。</p>
+<p>首次进入Postman会有一个登陆的操作，按时提示进行注册登录，再用账户登录Postman</p>
+<p>就可以在多个电脑上进行操作，共享数据。</p>
+<p>我们在Postman里面主要使用的功能就是进入Postman的左右两大版块<br><img  src="https://img-blog.csdnimg.cn/20210604111947562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>因为Postman不是国内开发团队开发的，所以界面操作可能会令大家有点蒙，这里简单的说一下如何去将Postman进行汉化。</p>
+<p>第一步：下载安装Postman</p>
+<p>第二步：下载汉化包</p>
+<p>具体步骤：打开github官网<a href="https://github.com/">https://github.com/</a></p>
+<p>搜索：Postman-cn<br><img  src="https://img-blog.csdnimg.cn/20210604112012801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>根据提示操作，你将会得到一个崭新的Postman。<br><img  src="https://img-blog.csdnimg.cn/20210604112030540.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>我们点击New可以看到Postman为我们提供的一些服务，<br><img  src="https://img-blog.csdnimg.cn/20210604112124261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>我们可以通过点击创建一个HTTP请求，一个测试集，以及创建一个环境变量。</p>
+<p>以及我们可以去学着去探索公共API网络<br><img  src="https://img-blog.csdnimg.cn/20210604112143877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>接下来我们进入正题，了解怎样的去发起一个请求</p>
+<p>在这里我们采取一个简单的例子。了解怎么去请求以及去得到请求结果。</p>
+<p><strong>发起第一个接口请求</strong></p>
+<ul>
+<li>第一个接口请求实战</li>
+</ul>
+<p>开放的天气API接口地址：</p>
+<blockquote>
+<p><a href="https://v0.yiketianqi.com/api">https://v0.yiketianqi.com/api</a></p>
+</blockquote>
+<p>接口文档地址：</p>
+<blockquote>
+<p><a href="http://www.tianqiapi.com/?action=v1">http://www.tianqiapi.com/?action=v1</a></p>
+</blockquote>
+<p>免费实况天气接口地址，仅个人使用免费，企业需要付费使用：</p>
+<blockquote>
+<p><a href="https://tianqiapi.com/free/day">https://tianqiapi.com/free/day</a></p>
+</blockquote>
+<p>网络上有非常多的开放接口可以用，比如用友开放接口平台：</p>
+<blockquote>
+<p><a href="https://api.yonyoucloud.com/">https://api.yonyoucloud.com</a></p>
+</blockquote>
+<p>但是需要注册得到AppCode才能进行测试，有用得到的话可以申请进行测试。因为大部分接口都需要使用APPID以及APPSecret进行接口调用验证。<br><img  src="https://img-blog.csdnimg.cn/20210604112238875.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>Postman基本功能使用<br><img  src="https://img-blog.csdnimg.cn/20210604112255315.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>如果我们想要拿到北京的天气状态需要再附加一个参数city，值为城市名称<br><img  src="https://img-blog.csdnimg.cn/20210604112319793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>整体分为两大板块，上半部分主要是请求栏，</p>
+<p>我们可以：</p>
+<ol>
+<li><p>在params选填自己的参数</p>
+</li>
+<li><p>在authentication选择鉴权登陆的方式，</p>
+</li>
+<li><p>在header栏添加我们接口请求的头域，</p>
+</li>
+<li><p>在body栏进行选择我们在接口请求的时候以不同的方式完成参数的携带，</p>
+</li>
+<li><p>在Pre request script栏目，可以在我们接口请求之前执行一些，js的脚本，</p>
+</li>
+<li><p>在body栏进行选择我们在接口请求的时候以不同的方式完成参数的携带，</p>
+</li>
+<li><p>在Pre request script栏目，可以在我们接口请求之前执行一些，js的脚本，</p>
+</li>
+<li><p>test则是我们接口请求完成之后，我们可以在此执行一些脚本文件，通常的作用是执行一些断言操作。</p>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>第一课  了解SQL</title>
+    <url>/2021/09/02/%E7%AC%AC%E4%B8%80%E8%AF%BE%C2%A0%E4%BA%86%E8%A7%A3SQL/</url>
+    <content><![CDATA[<h1 id="第一课-了解SQL"><a href="#第一课-了解SQL" class="headerlink" title="第一课 了解SQL"></a>第一课 了解SQL</h1><h2 id="一、数据库"><a href="#一、数据库" class="headerlink" title="一、数据库"></a>一、数据库</h2><p>$是以某种有组织的方式存储的数据集合$</p>
+<p><strong>数据库（database）</strong> </p>
+<p>$保存有组织的数据的容器(通常是一个文件或一组文件)$</p>
+<h2 id="二、表"><a href="#二、表" class="headerlink" title="二、表"></a>二、表</h2><p>$表是一种结构化的文件，可用来存储某种特定类型的数据。表可以保存顾客清单，产品目录，或者其他信息清单。$<strong>表 (table)</strong> </p>
+<p>$某种特定类型数据的结构化清单$</p>
+<ul>
+<li><p>$存储在表中的数据应当是同一种类型的数据或清单$</p>
+</li>
+<li><p>$每个表都有一个唯一的名字来标识自己$</p>
+</li>
+<li><p>$表具有一些特性，这些特性定义了数据在表中如何存储，包括存储什么样的数据，数据如何分解等等<br>$</p>
+</li>
+<li><p>$描述表的这些信息就是所谓的模式（schema)$</p>
+</li>
+</ul>
+<p><strong>模式</strong> </p>
+<p>$关于数据库和表的布局及特性的信息$</p>
+<h2 id="三、列和数据类型"><a href="#三、列和数据类型" class="headerlink" title="三、列和数据类型"></a>三、列和数据类型</h2><p>表由列组成。列存储表中某部分的信息。</p>
+<p><strong>列(column)</strong> </p>
+<p>表中的一个字段。所有的表都是由一个列或多个列组成的。</p>
+<p>理解列的最好办法就是将数据表想象成一个网格，就像个电子表格那样。网格中的某一列存储着某种的特定的信息。</p>
+<p>数据库中的每个列都有相应的数据类型。数据类型（datatype）定义列可以存储哪些数据种类，例如列中存储的是数字，则相对应的数据类型应该为数值类型。</p>
+<p><strong>数据类型</strong> </p>
+<p>允许什么类型的数据。每个表列都有对应的数据类型，它限制（或允许）该列中存储的数据。</p>
+<p>数据类型限定了可存储在列中的数据种类（例如，防止在数值字段中录入字符值）。数据类型还帮助正确的分类数据，并在优化磁盘使用方面起重要的作用。因此，在创建表时必须特别关注所用的数据类型。</p>
+<p>注意：数据类型兼容</p>
+<p>数据类型及其名称是SQL不兼容的一个主要原因，重要的是我们应该要记住这些差异。</p>
+<p><strong>行（row）</strong> </p>
+<p>表中的数据是按行存储的，所保存的每个记录存储在自己的行内。如果将表想象成网格，网格中垂直的列为1表列，，水平的为表行。</p>
+<p>行 （row）</p>
+<p>表中的一个记录</p>
+<p>说明：是记录还是行</p>
+<p>你可能听到用户在提到行时称它为数据库记录，但是从技术上来说，行才是正确术语。</p>
+<p><strong>主键</strong> </p>
+<p>表中每一行都应该有一列（或几列）可以唯一标识自己。顾客表可以使用顾客编号…</p>
+<p><strong>主键（primary key）</strong> </p>
+<p>一列或几列，其值能够唯一标识表中每一行，唯一标识表中每行的这个列（或这个列）成为主键。主键用来表示一个特定的行。没有主键删除表和更新表特定行就变得极为困难。</p>
+<p><strong>应该总是定义主键</strong> </p>
+<p>虽然并不总是需要主键，但是数据库设计者都会保证每个表具有一个主键，以便于以后的数据管理和操作。</p>
+<p>表中的任何列都可以为主键，只要它满足以下的条件：</p>
+<ul>
+<li><p>任意两行都不具有相同的主键</p>
+</li>
+<li><p>每一行都必须具有一个主键值（主键值不允许空值NULL）</p>
+</li>
+<li><p>主键列的中的值不允许修改或更新</p>
+</li>
+<li><p>主键值不能外用（如果某行在表中删除，它的主键不能赋给以后的新行）</p>
+</li>
+<li><p>主键通常定义在一列上但也可以是多列的，使用多列时，必须应用到所选择的所有列，所有列值的组合必须是唯一的。</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>ThinkPHP6的安装</title>
+    <url>/2021/09/02/ThinkPHP6%E7%9A%84%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>序言：</p>
+<ul>
+<li>ThinkPHP6.0版本开始，必须通过Composer方式安装和更新，所以你无法使用Git下载安装。</li>
+<li>同时ThinkPHP6.0版本要求PHP版本&gt;=7.1.0</li>
+</ul>
+<p><strong>一、安装Composer</strong></p>
+<p>在window中，下载Composer软件</p>
+<p>第一步：双击下载好的Composer运行程序</p>
+<p>第二步：选择要安装的盘符</p>
+<p>第三步：选择php版本，如果你是集成包环境，就到集成包里找php</p>
+<p>第四步：全部下一步</p>
+<p><strong>二、设置Composer的下载源</strong></p>
+<p>先设置Composer的下载源，也是镜像地址</p>
+<p>在命令行窗口或控制台输入</p>
+<p>composer config -g repo.packagist composer <a href="http://packagist.phpcomposer.com/">http://packagist.phpcomposer.com</a></p>
+<p>国外的网站速度慢，官网建议使用国内镜像（阿里云）</p>
+<p>composer config -g repo.packagist composer <a href="https://mirrors.aliyun.com/composer">https://mirrors.aliyun.com/composer</a></p>
+<p><strong>三、Composer下载、安装ThinkPHP6</strong></p>
+<p>先切换到PHP环境下根目录</p>
+<p>cd D:/phpstudy/PHPTutorial/WWW</p>
+<p>在执行下载ThinkPHP6命令，最后的tp,是新建个名字为tp的目录，可更改</p>
+<p>composer create-project topthink/think tp</p>
+<p>创建成功截图<br><img  src="https://img-blog.csdnimg.cn/2021052017152117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>更新 Thinkphp6核心</p>
+<p>composer update topthink/framework</p>
+<p>备:安装和更新命令所在的根目录是不同的，更新必须在你的应用根目录下面执行<br><img  src="https://img-blog.csdnimg.cn/20210520171543918.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p><strong>四、安装成功后，目录结构</strong></p>
+<p>安装后的目录结构就是一个单应用模式</p>
+<p>在mac或者linux环境下面，注意需要设置runtime目录权限为777</p>
+<p>WWW web部署目录(或者子目录)</p>
+<p>├─app                 应用目录</p>
+<p>│  └─controller    控制器目录</p>
+<p>├─config              配置目录</p>
+<p>├─extend             扩展类目录</p>
+<p>├─public              web目录(对外访问目录)</p>
+<p>│  └─static</p>
+<p>├─route               路由定义目录</p>
+<p>├─runtime           应用的运行时目录(可写，可定制)</p>
+<p>├─vendor            Composer类库目录</p>
+<p>│  ├─bin</p>
+<p>│  ├─composer</p>
+<p>│  ├─league</p>
+<p>│  │  ├─flysystem</p>
+<p>│  │  │  └─src</p>
+<p>│  │  │      ├─Adapter</p>
+<p>│  │  │      │  └─Polyfill</p>
+<p>│  │  │      ├─Plugin</p>
+<p>│  │  │      └─Util</p>
+<p>│  │  └─flysystem-cached-adapter</p>
+<p>│  │      ├─clover</p>
+<p>│  │      ├─spec</p>
+<p>│  │      ├─src</p>
+<p>│  │      │  └─Storage</p>
+<p>│  │      └─tests</p>
+<p>│  ├─psr</p>
+<p>│  │  ├─cache</p>
+<p>│  │  │  └─src</p>
+<p>│  │  ├─container</p>
+<p>│  │  │  └─src</p>
+<p>│  │  ├─log</p>
+<p>│  │  │  └─Psr</p>
+<p>│  │  │      └─Log</p>
+<p>│  │  │          └─Test</p>
+<p>│  │  └─simple-cache</p>
+<p>│  │      └─src</p>
+<p>│  ├─symfony</p>
+<p>│  │  ├─polyfill-mbstring</p>
+<p>│  │  │  └─Resources</p>
+<p>│  │  │      └─unidata</p>
+<p>│  │  ├─polyfill-php72</p>
+<p>│  │  ├─polyfill-php80</p>
+<p>│  │  │  └─Resources</p>
+<p>│  │  │      └─stubs</p>
+<p>│  │  └─var-dumper</p>
+<p>│  │      ├─Caster</p>
+<p>│  │      ├─Cloner</p>
+<p>│  │      ├─Command</p>
+<p>│  │      │  └─Descriptor</p>
+<p>│  │      ├─Dumper</p>
+<p>│  │      │  └─ContextProvider</p>
+<p>│  │      ├─Exception</p>
+<p>│  │      ├─Resources</p>
+<p>│  │      │  ├─bin</p>
+<p>│  │      │  ├─css</p>
+<p>│  │      │  ├─functions</p>
+<p>│  │      │  └─js</p>
+<p>│  │      ├─Server</p>
+<p>│  │      └─Test</p>
+<p>│  └─topthink</p>
+<p>│      ├─framework</p>
+<p>│      │  ├─src</p>
+<p>│      │  │  ├─lang</p>
+<p>│      │  │  ├─think</p>
+<p>│      │  │  │  ├─cache</p>
+<p>│      │  │  │  │  └─driver</p>
+<p>│      │  │  │  ├─console</p>
+<p>│      │  │  │  │  ├─bin</p>
+<p>│      │  │  │  │  ├─command</p>
+<p>│      │  │  │  │  │  ├─make</p>
+<p>│      │  │  │  │  │  │  └─stubs</p>
+<p>│      │  │  │  │  │  └─optimize</p>
+<p>│      │  │  │  │  ├─input</p>
+<p>│      │  │  │  │  └─output</p>
+<p>│      │  │  │  │      ├─descriptor</p>
+<p>│      │  │  │  │      ├─driver</p>
+<p>│      │  │  │  │      ├─formatter</p>
+<p>│      │  │  │  │      └─question</p>
+<p>│      │  │  │  ├─contract</p>
+<p>│      │  │  │  ├─event</p>
+<p>│      │  │  │  ├─exception</p>
+<p>│      │  │  │  ├─facade</p>
+<p>│      │  │  │  ├─file</p>
+<p>│      │  │  │  ├─filesystem</p>
+<p>│      │  │  │  │  └─driver</p>
+<p>│      │  │  │  ├─initializer</p>
+<p>│      │  │  │  ├─log</p>
+<p>│      │  │  │  │  └─driver</p>
+<p>│      │  │  │  ├─middleware</p>
+<p>│      │  │  │  ├─response</p>
+<p>│      │  │  │  ├─route</p>
+<p>│      │  │  │  │  └─dispatch</p>
+<p>│      │  │  │  ├─service</p>
+<p>│      │  │  │  ├─session</p>
+<p>│      │  │  │  │  └─driver</p>
+<p>│      │  │  │  ├─validate</p>
+<p>│      │  │  │  └─view</p>
+<p>│      │  │  │      └─driver</p>
+<p>│      │  │  └─tpl</p>
+<p>│      │  └─tests</p>
+<p>│      ├─think-helper</p>
+<p>│      │  └─src</p>
+<p>│      │      ├─contract</p>
+<p>│      │      └─helper</p>
+<p>│      ├─think-orm</p>
+<p>│      │  ├─src</p>
+<p>│      │  │  ├─db</p>
+<p>│      │  │  │  ├─builder</p>
+<p>│      │  │  │  ├─concern</p>
+<p>│      │  │  │  ├─connector</p>
+<p>│      │  │  │  └─exception</p>
+<p>│      │  │  ├─facade</p>
+<p>│      │  │  ├─model</p>
+<p>│      │  │  │  ├─concern</p>
+<p>│      │  │  │  └─relation</p>
+<p>│      │  │  └─paginator</p>
+<p>│      │  │      └─driver</p>
+<p>│      │  └─stubs</p>
+<p>│      └─think-trace</p>
+<p>│          └─src</p>
+<p>│              └─tpl</p>
+<p>└─view</p>
+<p>效果截图<br><img  src="https://img-blog.csdnimg.cn/20210520171607395.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><strong>五、运行Thinkphp6</strong></p>
+<p>注：window系统里的php环境集成包，如何访问</p>
+<p>第一步：打开phpstudy集成软件 -》 站点域名管理</p>
+<p>第二步：网站域名：<a href="http://www.xxx.com/">www.xxx.com</a></p>
+<p>第三步：网站目录：tp/public</p>
+<p>第四步：在C:\Windows\System32\drivers\etc目录下，打开hosts文件</p>
+<p>第五步：最后一行输入127.0.0.1 <a href="http://www.xxx.com/">www.xxx.com</a></p>
+<p>第六步：直接在浏览器上输入域名(<a href="http://www.xxx.com/">www.xxx.com)</a>)<br><img  src="https://img-blog.csdnimg.cn/20210520171642380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ThinkPHP6起步</title>
+    <url>/2021/09/02/ThinkPHP6%E8%B5%B7%E6%AD%A5/</url>
+    <content><![CDATA[<p>ThinkPHP6起步</p>
+<p>ThinkPHP支持传统的MVC(Model-View-Controller)模式以及流行的MVVM(Model-View-ViewModel)模式的应用开发</p>
+<p><strong>一、MVC</strong></p>
+<p>MVC软件系统分为三个基本部分：模型(Model)、视图（View）和控制器（Controller）</p>
+<p>ThinkPHP6是一个典型的MVC架构。</p>
+<p>控制器-控制器。用于将用户请求转发给相应的Model进行处理，并根据Model的计算结果向用户提供相应响应的。</p>
+<p>视图-为用户提供使用界面，与用户直接进行交互。</p>
+<p>模型-承接数据，并对用户提交请求进行计算的模块。</p>
+<p>MVC架构程序的工作流程：</p>
+<p>（1）用户通过View页面向服务端提出请求，可以是表单请求。超链接请求。AJAX请求</p>
+<p>（2）服务端Controller控制器接收到请求后对请求进行解析，找到相对应的Model对用户请求进行处理。</p>
+<p>（3）Model处理后，将处理结果再交给Controller</p>
+<p>（4）Controller在接到处理结果后，根据处理结果找到要作为向客户端发回的响应View页面。页面经渲染（数据填充后）,再发送到客户端。<br><img  src="https://img-blog.csdnimg.cn/20210525110559234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><strong>二、单应用模式访问</strong></p>
+<p>项目访问路径：<a href="http://www.xxx.com/index.php/index/index">www.xxx.com/index.php/index/index</a></p>
+<p>index.php 入口文件(可以通过配置伪静态省略)</p>
+<p>index控制器</p>
+<p>index方法</p>
+<p>一个文件里面只能有一个类，并且类名要与文件名相对应。</p>
+<p>查看报错信息，将config文件夹下的app.php，’show_error_msg’=&gt;true</p>
+<p><strong>三、安装视图</strong></p>
+<p>新版框架默认只能支持PHP原生模板，如果需要使用think Template模板引擎，需要安装think-view扩展（该扩展会自动安装think-template依赖库）</p>
+<p>composer require topthink/think-view<br><img  src="https://img-blog.csdnimg.cn/20210525110626415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>视图目录可以在根目录，也可以在app应用目录，可以通过config目录下的view.php修改视图配置。</p>
+<p><strong>四、模板渲染</strong></p>
+<p>要使用View，必须先引入think/facade/View 门面类</p>
+<p>模板渲染的最典型用法是直接使用fetch方法，不带任何参数，系统会按照默认规则自动定位视图(View)目录下的模板文件，其规则是：控制器名(小写+下划线)、操作(方法名字).html</p>
+<p>Controller代码</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">BaseController</span>; <span class="keyword">use</span> <span class="title">think</span>\<span class="title">facade</span>\<span class="title">View</span>; <span class="comment">//引用门面类</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">BaseController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="string">&#x27;&lt;style type=&quot;text/css&quot;&gt;*&#123; padding: 0; margin: 0; &#125; div&#123; padding: 4px 48px;&#125; a&#123;color:#2E5CD5;cursor: pointer;text-decoration: none&#125; a:hover&#123;text-decoration:underline; &#125; body&#123; background: #fff; font-family: &quot;Century Gothic&quot;,&quot;Microsoft yahei&quot;; color: #333;font-size:18px;&#125; h1&#123; font-size: 100px; font-weight: normal; margin-bottom: 12px; &#125; p&#123; line-height: 1.6em; font-size: 42px &#125;&lt;/style&gt;&lt;div style=&quot;padding: 24px 48px;&quot;&gt; &lt;h1&gt;:) &lt;/h1&gt;&lt;p&gt; ThinkPHP V&#x27;</span> . \think\facade\App::version() . <span class="string">&#x27;&lt;br/&gt;&lt;span style=&quot;font-size:30px;&quot;&gt;14载初心不改 - 你值得信赖的PHP框架&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-size:25px;&quot;&gt;[ V6.0 版本由 &lt;a href=&quot;https://www.yisu.com/&quot; target=&quot;yisu&quot;&gt;亿速云&lt;/a&gt; 独家赞助发布 ]&lt;/span&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://tajs.qq.com/stats?sId=64890268&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;src=&quot;https://e.topthink.com/Public/static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;ee9b1aa918103c4fc&quot;&gt;&lt;/think&gt;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"><span class="variable">$name</span> = <span class="string">&#x27;ThinkPHP6&#x27;</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="string">&#x27;hello,&#x27;</span> . <span class="variable">$name</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>view代码（注：在app目录下，view目录需要我们手动创建）</p>
+<p>如果想要更改应用视图的位置，在config文件目录下view.php可以修改参数配置实现。</p>
+<p>创建视图的过程，我们采取一个简单的例子</p>
+<p>假设我们在默认存在的index.php里面创建一个访问视图的方法<br><img  src="https://img-blog.csdnimg.cn/20210525110806568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+<p>同理，我们需要创建一个同名的html页面<br><img  src="https://img-blog.csdnimg.cn/20210525110824932.png#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>在浏览器以控制器名称加方法名访问它</p>
+<p><a href="http://www.moonlinku.com/index.php/index/test">http://www.xxx.com/index.php/index/test</a><br><img  src="https://img-blog.csdnimg.cn/20210525110844439.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>如果我们想使用view::fetch()访问我们指定的页面，则需要在fetch方法中带上指定的函数。</p>
+<p>例如我们想访问view视图层底下index目录底下的login.html文件，我们可以这么做<br><img  src="https://img-blog.csdnimg.cn/20210525110859943.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">BaseController</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">facade</span>\<span class="title">View</span>;  <span class="comment">//引用门面类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">BaseController</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&lt;style type=&quot;text/css&quot;&gt;*&#123; padding: 0; margin: 0; &#125; div&#123; padding: 4px 48px;&#125; a&#123;color:#2E5CD5;cursor: pointer;text-decoration: none&#125; a:hover&#123;text-decoration:underline; &#125; body&#123; background: #fff; font-family: &quot;Century Gothic&quot;,&quot;Microsoft yahei&quot;; color: #333;font-size:18px;&#125; h1&#123; font-size: 100px; font-weight: normal; margin-bottom: 12px; &#125; p&#123; line-height: 1.6em; font-size: 42px &#125;&lt;/style&gt;&lt;div style=&quot;padding: 24px 48px;&quot;&gt; &lt;h1&gt;:) &lt;/h1&gt;&lt;p&gt; ThinkPHP V&#x27;</span> . \think\facade\App::version() . <span class="string">&#x27;&lt;br/&gt;&lt;span style=&quot;font-size:30px;&quot;&gt;14载初心不改 - 你值得信赖的PHP框架&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-size:25px;&quot;&gt;[ V6.0 版本由 &lt;a href=&quot;https://www.yisu.com/&quot; target=&quot;yisu&quot;&gt;亿速云&lt;/a&gt; 独家赞助发布 ]&lt;/span&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://tajs.qq.com/stats?sId=64890268&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://e.topthink.com/Public/static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;ee9b1aa918103c4fc&quot;&gt;&lt;/think&gt;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"><span class="variable">$name</span> = <span class="string">&#x27;ThinkPHP6&#x27;</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;hello,&#x27;</span> . <span class="variable">$name</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> view::fetch();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//访问指定页面,ibdex目录下的login.html</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> view::fetch(<span class="string">&#x27;index/login&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>访问成功提示<br><img  src="https://img-blog.csdnimg.cn/20210525111015326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><strong>五、模板变量</strong></p>
+<ul>
+<li>使用assgin方法进行全局模板变量赋值。</li>
+<li>模板输出{$name}</li>
+</ul>
+<p>Controller代码</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">BaseController</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">facade</span>\<span class="title">View</span>;  <span class="comment">//引用门面类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">BaseController</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&lt;style type=&quot;text/css&quot;&gt;*&#123; padding: 0; margin: 0; &#125; div&#123; padding: 4px 48px;&#125; a&#123;color:#2E5CD5;cursor: pointer;text-decoration: none&#125; a:hover&#123;text-decoration:underline; &#125; body&#123; background: #fff; font-family: &quot;Century Gothic&quot;,&quot;Microsoft yahei&quot;; color: #333;font-size:18px;&#125; h1&#123; font-size: 100px; font-weight: normal; margin-bottom: 12px; &#125; p&#123; line-height: 1.6em; font-size: 42px &#125;&lt;/style&gt;&lt;div style=&quot;padding: 24px 48px;&quot;&gt; &lt;h1&gt;:) &lt;/h1&gt;&lt;p&gt; ThinkPHP V&#x27;</span> . \think\facade\App::version() . <span class="string">&#x27;&lt;br/&gt;&lt;span style=&quot;font-size:30px;&quot;&gt;14载初心不改 - 你值得信赖的PHP框架&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-size:25px;&quot;&gt;[ V6.0 版本由 &lt;a href=&quot;https://www.yisu.com/&quot; target=&quot;yisu&quot;&gt;亿速云&lt;/a&gt; 独家赞助发布 ]&lt;/span&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://tajs.qq.com/stats?sId=64890268&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://e.topthink.com/Public/static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;ee9b1aa918103c4fc&quot;&gt;&lt;/think&gt;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"><span class="variable">$name</span> = <span class="string">&#x27;ThinkPHP6&#x27;</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;hello,&#x27;</span> . <span class="variable">$name</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> view::fetch();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> view::fetch(<span class="string">&#x27;index/login&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//模板变量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">variable</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//模板变量赋值</span></span><br><span class="line">        view::assign(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;moon&#x27;</span>);</span><br><span class="line">        view::assign(<span class="string">&#x27;qq&#x27;</span>,<span class="string">&#x27;1809620325&#x27;</span>);</span><br><span class="line">        <span class="comment">//或者批量赋值</span></span><br><span class="line">        view::assign([</span><br><span class="line">            <span class="string">&#x27;name&#x27;</span> =&gt; <span class="string">&#x27;moon&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;qq&#x27;</span>  =&gt; <span class="string">&#x27;1809620325&#x27;</span></span><br><span class="line">        ]);</span><br><span class="line">        <span class="comment">//模板输出</span></span><br><span class="line">       <span class="keyword">return</span> view::fetch(<span class="string">&#x27;index/test&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>View代码</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    名字:&#123;$name&#125;</span><br><span class="line">   <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    qq:&#123;$qq&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>展示效果<br><img  src="https://img-blog.csdnimg.cn/2021052511113355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+<ul>
+<li>assign方法赋值属于全局变量赋值，如果你需要单次赋值的话，可以直接在fetch方法中传入</li>
+</ul>
+<p>controller代码</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">BaseController</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">facade</span>\<span class="title">View</span>;  <span class="comment">//引用门面类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">BaseController</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&lt;style type=&quot;text/css&quot;&gt;*&#123; padding: 0; margin: 0; &#125; div&#123; padding: 4px 48px;&#125; a&#123;color:#2E5CD5;cursor: pointer;text-decoration: none&#125; a:hover&#123;text-decoration:underline; &#125; body&#123; background: #fff; font-family: &quot;Century Gothic&quot;,&quot;Microsoft yahei&quot;; color: #333;font-size:18px;&#125; h1&#123; font-size: 100px; font-weight: normal; margin-bottom: 12px; &#125; p&#123; line-height: 1.6em; font-size: 42px &#125;&lt;/style&gt;&lt;div style=&quot;padding: 24px 48px;&quot;&gt; &lt;h1&gt;:) &lt;/h1&gt;&lt;p&gt; ThinkPHP V&#x27;</span> . \think\facade\App::version() . <span class="string">&#x27;&lt;br/&gt;&lt;span style=&quot;font-size:30px;&quot;&gt;14载初心不改 - 你值得信赖的PHP框架&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-size:25px;&quot;&gt;[ V6.0 版本由 &lt;a href=&quot;https://www.yisu.com/&quot; target=&quot;yisu&quot;&gt;亿速云&lt;/a&gt; 独家赞助发布 ]&lt;/span&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://tajs.qq.com/stats?sId=64890268&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://e.topthink.com/Public/static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;ee9b1aa918103c4fc&quot;&gt;&lt;/think&gt;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"><span class="variable">$name</span> = <span class="string">&#x27;ThinkPHP6&#x27;</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;hello,&#x27;</span> . <span class="variable">$name</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> view::fetch();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> view::fetch(<span class="string">&#x27;index/login&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//模板变量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">variable</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//模板输出并变量赋值，test为模板名称</span></span><br><span class="line">       <span class="keyword">return</span> view::fetch(<span class="string">&#x27;test&#x27;</span>,[</span><br><span class="line">           <span class="string">&#x27;name&#x27;</span> =&gt; <span class="string">&#x27;moon&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;qq&#x27;</span>  =&gt; <span class="string">&#x27;1809620325&#x27;</span></span><br><span class="line">       ]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>展示效果<br><img  src="https://img-blog.csdnimg.cn/20210525111242455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><strong>助手函数</strong></p>
+<ul>
+<li>如果使用View助手函数渲染输出的话，可以使用以下的方法进行模板变量赋值</li>
+</ul>
+<p>Controller代码</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">BaseController</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">facade</span>\<span class="title">View</span>;  <span class="comment">//引用门面类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">BaseController</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&lt;style type=&quot;text/css&quot;&gt;*&#123; padding: 0; margin: 0; &#125; div&#123; padding: 4px 48px;&#125; a&#123;color:#2E5CD5;cursor: pointer;text-decoration: none&#125; a:hover&#123;text-decoration:underline; &#125; body&#123; background: #fff; font-family: &quot;Century Gothic&quot;,&quot;Microsoft yahei&quot;; color: #333;font-size:18px;&#125; h1&#123; font-size: 100px; font-weight: normal; margin-bottom: 12px; &#125; p&#123; line-height: 1.6em; font-size: 42px &#125;&lt;/style&gt;&lt;div style=&quot;padding: 24px 48px;&quot;&gt; &lt;h1&gt;:) &lt;/h1&gt;&lt;p&gt; ThinkPHP V&#x27;</span> . \think\facade\App::version() . <span class="string">&#x27;&lt;br/&gt;&lt;span style=&quot;font-size:30px;&quot;&gt;14载初心不改 - 你值得信赖的PHP框架&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-size:25px;&quot;&gt;[ V6.0 版本由 &lt;a href=&quot;https://www.yisu.com/&quot; target=&quot;yisu&quot;&gt;亿速云&lt;/a&gt; 独家赞助发布 ]&lt;/span&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://tajs.qq.com/stats?sId=64890268&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://e.topthink.com/Public/static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;ee9b1aa918103c4fc&quot;&gt;&lt;/think&gt;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"><span class="variable">$name</span> = <span class="string">&#x27;ThinkPHP6&#x27;</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;hello,&#x27;</span> . <span class="variable">$name</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> view::fetch();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> view::fetch(<span class="string">&#x27;index/login&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//模板变量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">variable</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="comment">//使用助手函数进行赋值</span></span><br><span class="line">        <span class="keyword">return</span>  view(<span class="string">&#x27;test&#x27;</span>,[</span><br><span class="line">            <span class="string">&#x27;name&#x27;</span>=&gt;<span class="string">&#x27;moonloon&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;qq&#x27;</span>=&gt;<span class="string">&#x27;1809620325&#x27;</span></span><br><span class="line">        ]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>展示结果<br><img  src="https://img-blog.csdnimg.cn/20210525111331913.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ThinkPHP6模板引擎</title>
+    <url>/2021/09/02/ThinkPHP6%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</url>
+    <content><![CDATA[<ul>
+<li>模板引擎支持普通标签和XML标签方式两种标签定义，分别用于不同的目的</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>标签类型</strong></th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通标签</td>
+<td>主要用于输出变量，函数过滤和做一些基本的运算操作</td>
+</tr>
+<tr>
+<td>XML标签</td>
+<td>也称为标签库标签，主要完成一些逻辑判断，控制和循环输出，并且可扩展</td>
+</tr>
+</tbody></table>
+<p><strong>一、运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>{$ a+$b}</td>
+</tr>
+<tr>
+<td>-</td>
+<td>{$ a-$b}</td>
+</tr>
+<tr>
+<td>*</td>
+<td>{$ a*$b}</td>
+</tr>
+<tr>
+<td>/</td>
+<td>{$ a/$b}</td>
+</tr>
+<tr>
+<td>%</td>
+<td>{$ a%$b}</td>
+</tr>
+<tr>
+<td>++</td>
+<td>{$ a++}或{++$a}</td>
+</tr>
+<tr>
+<td>–</td>
+<td>{$ a–}或{–$a}</td>
+</tr>
+<tr>
+<td>综合运算</td>
+<td>{$ a+$ b*10+$c}</td>
+</tr>
+<tr>
+<td>三元运算符</td>
+<td>{$ a==$b?’yes’:’No’}</td>
+</tr>
+</tbody></table>
+<p>Controller文件</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controller</span>; </span><br><span class="line"> <span class="keyword">use</span> <span class="title">app</span>\<span class="title">BaseController</span>; </span><br><span class="line"> <span class="keyword">use</span> <span class="title">think</span>\<span class="title">facade</span>\<span class="title">View</span>;  <span class="comment">//引用门面类</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">BaseController</span> </span>&#123;    </span><br><span class="line">	   <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)     </span>&#123;         <span class="keyword">return</span> <span class="string">&#x27;&lt;style type=&quot;text/css&quot;&gt;*&#123; padding: 0; margin: 0; &#125; div&#123; padding: 4px 48px;&#125; a&#123;color:#2E5CD5;cursor: pointer;text-decoration: none&#125; a:hover&#123;text-decoration:underline; &#125; body&#123; background: #fff; font-family: &quot;Century Gothic&quot;,&quot;Microsoft yahei&quot;; color: #333;font-size:18px;&#125; h1&#123; font-size: 100px; font-weight: normal; margin-bottom: 12px; &#125; p&#123; line-height: 1.6em; font-size: 42px &#125;&lt;/style&gt;&lt;div style=&quot;padding: 24px 48px;&quot;&gt; &lt;h1&gt;:) &lt;/h1&gt;&lt;p&gt; ThinkPHP V&#x27;</span> . \think\facade\App::version() . <span class="string">&#x27;&lt;br/&gt;&lt;span style=&quot;font-size:30px;&quot;&gt;14载初心不改 - 你值得信赖的PHP框架&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-size:25px;&quot;&gt;[ V6.0 版本由 &lt;a href=&quot;https://www.yisu.com/&quot; target=&quot;yisu&quot;&gt;亿速云&lt;/a&gt; 独家赞助发布 ]&lt;/span&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://tajs.qq.com/stats?sId=64890268&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://e.topthink.com/Public/static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;ee9b1aa918103c4fc&quot;&gt;&lt;/think&gt;&#x27;</span>;  </span><br><span class="line">	      &#125;     </span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"><span class="variable">$name</span> = <span class="string">&#x27;ThinkPHP6&#x27;</span></span>)     </span>&#123; </span><br><span class="line">	    <span class="keyword">return</span> <span class="string">&#x27;hello,&#x27;</span> . <span class="variable">$name</span>;   </span><br><span class="line">	   &#125; </span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)     </span>&#123;  </span><br><span class="line">	    <span class="keyword">return</span> view::fetch(); </span><br><span class="line">	   &#125;     </span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>)     </span>&#123;</span><br><span class="line">	    <span class="keyword">return</span> view::fetch(<span class="string">&#x27;index/login&#x27;</span>);   </span><br><span class="line">	   &#125;    </span><br><span class="line">	<span class="comment">//模板变量</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">variable</span>(<span class="params"></span>)</span>&#123;       </span><br><span class="line">	 <span class="comment">//使用助手函数进行赋值  </span></span><br><span class="line">	 <span class="keyword">return</span>  view(<span class="string">&#x27;test&#x27;</span>,[   </span><br><span class="line">	    <span class="string">&#x27;name&#x27;</span>=&gt;<span class="string">&#x27;moonloon&#x27;</span>,  </span><br><span class="line">	     <span class="string">&#x27;qq&#x27;</span>=&gt;<span class="string">&#x27;1809620325&#x27;</span></span><br><span class="line">	     ]);  </span><br><span class="line">	 &#125; </span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">Operator</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	           view::assign(<span class="string">&#x27;a&#x27;</span>,<span class="number">520</span>);</span><br><span class="line">	           view::assign(<span class="string">&#x27;b&#x27;</span>,<span class="number">13</span>);</span><br><span class="line">	           <span class="keyword">return</span> view::fetch();    </span><br><span class="line">	   &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>View文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span>     </span><br><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$a+$b&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$a-$b&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$a*$b&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$a/$b&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$a%$b&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$a++&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$a--&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$a+$b*10&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$a===$b?&#x27;yes&#x27;:&#x27;no&#x27;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>展示结果<br><img  src="https://img-blog.csdnimg.cn/20210527104157662.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><strong>二：模板函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>date</td>
+<td>日期格式化（支持各种时间类型）</td>
+</tr>
+<tr>
+<td>upper</td>
+<td>转换为大写</td>
+</tr>
+<tr>
+<td>lower</td>
+<td>转换为小写</td>
+</tr>
+<tr>
+<td>first</td>
+<td>输出数组的第一个元素</td>
+</tr>
+<tr>
+<td>last</td>
+<td>输出数组的最后一个元素</td>
+</tr>
+<tr>
+<td>default</td>
+<td>默认值</td>
+</tr>
+<tr>
+<td>raw</td>
+<td>不使用（默认）转义</td>
+</tr>
+<tr>
+<td>md5</td>
+<td>md5加密</td>
+</tr>
+<tr>
+<td>substr</td>
+<td>截取字符串</td>
+</tr>
+</tbody></table>
+<ul>
+<li>可以多函数调用</li>
+</ul>
+<p>Controller文件</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controller</span>; </span><br><span class="line"> <span class="keyword">use</span> <span class="title">app</span>\<span class="title">BaseController</span>;</span><br><span class="line"> <span class="keyword">use</span> <span class="title">think</span>\<span class="title">facade</span>\<span class="title">View</span>;  <span class="comment">//引用门面类</span></span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">BaseController</span> </span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span>&#123;         <span class="keyword">return</span> <span class="string">&#x27;&lt;style type=&quot;text/css&quot;&gt;*&#123; padding: 0; margin: 0; &#125; div&#123; padding: 4px 48px;&#125; a&#123;color:#2E5CD5;cursor: pointer;text-decoration: none&#125; a:hover&#123;text-decoration:underline; &#125; body&#123; background: #fff; font-family: &quot;Century Gothic&quot;,&quot;Microsoft yahei&quot;; color: #333;font-size:18px;&#125; h1&#123; font-size: 100px; font-weight: normal; margin-bottom: 12px; &#125; p&#123; line-height: 1.6em; font-size: 42px &#125;&lt;/style&gt;&lt;div style=&quot;padding: 24px 48px;&quot;&gt; &lt;h1&gt;:) &lt;/h1&gt;&lt;p&gt; ThinkPHP V&#x27;</span> . \think\facade\App::version() . <span class="string">&#x27;&lt;br/&gt;&lt;span style=&quot;font-size:30px;&quot;&gt;14载初心不改 - 你值得信赖的PHP框架&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-size:25px;&quot;&gt;[ V6.0 版本由 &lt;a href=&quot;https://www.yisu.com/&quot; target=&quot;yisu&quot;&gt;亿速云&lt;/a&gt; 独家赞助发布 ]&lt;/span&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://tajs.qq.com/stats?sId=64890268&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://e.topthink.com/Public/static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;ee9b1aa918103c4fc&quot;&gt;&lt;/think&gt;&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"><span class="variable">$name</span> = <span class="string">&#x27;ThinkPHP6&#x27;</span></span>)</span>&#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&#x27;hello,&#x27;</span> . <span class="variable">$name</span>;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> view::fetch();</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> view::fetch(<span class="string">&#x27;index/login&#x27;</span>);</span><br><span class="line">         &#125;     </span><br><span class="line">         <span class="comment">//模板变量</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">variable</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="comment">//使用助手函数进行赋值</span></span><br><span class="line"><span class="keyword">return</span>  view(<span class="string">&#x27;test&#x27;</span>,[ </span><br><span class="line"><span class="string">&#x27;name&#x27;</span>=&gt;<span class="string">&#x27;moonloon&#x27;</span>, </span><br><span class="line"><span class="string">&#x27;qq&#x27;</span>=&gt;<span class="string">&#x27;1809620325&#x27;</span></span><br><span class="line">]);</span><br><span class="line">&#125;    </span><br><span class="line"> <span class="comment">//运算符</span></span><br><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">Operator</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">  view::assign(<span class="string">&#x27;a&#x27;</span>,<span class="number">520</span>); </span><br><span class="line">  view::assign(<span class="string">&#x27;b&#x27;</span>,<span class="number">13</span>); </span><br><span class="line">  <span class="keyword">return</span> view::fetch(); </span><br><span class="line">  &#125; </span><br><span class="line">   <span class="comment">//模板函数</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">mouldefx</span>(<span class="params"></span>)</span>&#123;   </span><br><span class="line">        view::assign(<span class="string">&#x27;time&#x27;</span>,<span class="number">1604649103</span>); </span><br><span class="line">        view::assign(<span class="string">&#x27;num&#x27;</span>,<span class="number">520.1314</span>);</span><br><span class="line">        view::assign(<span class="string">&#x27;str&#x27;</span>,<span class="string">&#x27;Iloveyou&#x27;</span>);                          </span><br><span class="line">	    view::assign(<span class="string">&#x27;arr&#x27;</span>,[ </span><br><span class="line">	    <span class="string">&#x27;小黄&#x27;</span>,</span><br><span class="line">	    <span class="string">&#x27;小虾&#x27;</span>, </span><br><span class="line">	    <span class="string">&#x27;小红&#x27;</span>, </span><br><span class="line">	    ]); </span><br><span class="line">	     <span class="keyword">return</span> view::fetch();</span><br><span class="line">	     &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>View文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>     </span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">	  <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$time|date=&#x27;y-m-d H:i:s&#x27;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	   <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$str|upper&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">	   <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$str|lower&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$arr|first&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$arr|last&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$default|default=&#x27;小周&#x27;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$str|substr=0,3&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$str|md5&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;$str|lower|substr=0,3&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>展示结果<br><img  src="https://img-blog.csdnimg.cn/20210527104835624.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>模板支持注释功能，该注释文字在最终页不会显示，仅供模板制作人员参考和识别</p>
+<p>单行注释 格式：</p>
+<p>{/* 注释内容 */} 或 {// 注释内容}</p>
+<p>注意{和注释标记之间不能有空格</p>
+<p>多行注释 格式：</p>
+<p>{/*这是模板 注释内容 */}</p>
+<p>注意：模板注释在生成编译缓存文件后会自动删除，这一点和Html的注释不同</p>
+<p>原样输出</p>
+<p>可以使用literal标签来防止模板标签被解析，例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;literal&#125;  hello,&#123;$name&#125; &#123;/literal&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>循环标签</strong></p>
+<ul>
+<li>foreach 标签的用法和PHP语法非常接近，用于循环输出数组或者对象的属性</li>
+</ul>
+<p>Controller文件</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">BaseController</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">facade</span>\<span class="title">View</span>;  <span class="comment">//引用门面类</span></span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">BaseController</span> </span>&#123;     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)     </span>&#123;         <span class="keyword">return</span> <span class="string">&#x27;&lt;style type=&quot;text/css&quot;&gt;*&#123; padding: 0; margin: 0; &#125; div&#123; padding: 4px 48px;&#125; a&#123;color:#2E5CD5;cursor: pointer;text-decoration: none&#125; a:hover&#123;text-decoration:underline; &#125; body&#123; background: #fff; font-family: &quot;Century Gothic&quot;,&quot;Microsoft yahei&quot;; color: #333;font-size:18px;&#125; h1&#123; font-size: 100px; font-weight: normal; margin-bottom: 12px; &#125; p&#123; line-height: 1.6em; font-size: 42px &#125;&lt;/style&gt;&lt;div style=&quot;padding: 24px 48px;&quot;&gt; &lt;h1&gt;:) &lt;/h1&gt;&lt;p&gt; ThinkPHP V&#x27;</span> . \think\facade\App::version() . <span class="string">&#x27;&lt;br/&gt;&lt;span style=&quot;font-size:30px;&quot;&gt;14载初心不改 - 你值得信赖的PHP框架&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-size:25px;&quot;&gt;[ V6.0 版本由 &lt;a href=&quot;https://www.yisu.com/&quot; target=&quot;yisu&quot;&gt;亿速云&lt;/a&gt; 独家赞助发布 ]&lt;/span&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://tajs.qq.com/stats?sId=64890268&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://e.topthink.com/Public/static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;ee9b1aa918103c4fc&quot;&gt;&lt;/think&gt;&#x27;</span>;     &#125;</span><br><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"><span class="variable">$name</span> = <span class="string">&#x27;ThinkPHP6&#x27;</span></span>)</span>&#123; </span><br><span class="line">         <span class="keyword">return</span> <span class="string">&#x27;hello,&#x27;</span> . <span class="variable">$name</span>; </span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> view::fetch();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> view::fetch(<span class="string">&#x27;index/login&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//模板变量</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">variable</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="comment">//使用助手函数进行赋值</span></span><br><span class="line">	<span class="keyword">return</span>  view(<span class="string">&#x27;test&#x27;</span>,[</span><br><span class="line">	<span class="string">&#x27;name&#x27;</span>=&gt;<span class="string">&#x27;moonloon&#x27;</span>,</span><br><span class="line">	<span class="string">&#x27;qq&#x27;</span>=&gt;<span class="string">&#x27;1809620325&#x27;</span></span><br><span class="line">	]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//运算符</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">Operator</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">view::assign(<span class="string">&#x27;a&#x27;</span>,<span class="number">520</span>);</span><br><span class="line">view::assign(<span class="string">&#x27;b&#x27;</span>,<span class="number">13</span>);</span><br><span class="line"><span class="keyword">return</span> view::fetch();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//模板函数</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">mouldefx</span>(<span class="params"></span>)</span>&#123; 	</span><br><span class="line">	 view::assign(<span class="string">&#x27;time&#x27;</span>,<span class="number">1604649103</span>);  </span><br><span class="line">	 view::assign(<span class="string">&#x27;num&#x27;</span>,<span class="number">520.1314</span>);</span><br><span class="line">	 view::assign(<span class="string">&#x27;str&#x27;</span>,<span class="string">&#x27;Iloveyou&#x27;</span>); </span><br><span class="line">	 view::assign(<span class="string">&#x27;arr&#x27;</span>,[ </span><br><span class="line">		<span class="string">&#x27;小黄&#x27;</span>,</span><br><span class="line">		<span class="string">&#x27;小虾&#x27;</span>,</span><br><span class="line">		<span class="string">&#x27;小红&#x27;</span>,</span><br><span class="line">		]);</span><br><span class="line">     <span class="keyword">return</span> view::fetch();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//循环标签</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">looplabel</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="variable">$arr</span>=[ </span><br><span class="line">	[<span class="string">&#x27;id&#x27;</span>=&gt;<span class="string">&#x27;1&#x27;</span> , <span class="string">&#x27;name&#x27;</span>=&gt;<span class="string">&#x27;小谭&#x27;</span> , ],</span><br><span class="line">	[<span class="string">&#x27;id&#x27;</span>=&gt;<span class="string">&#x27;2&#x27;</span> ,<span class="string">&#x27;name&#x27;</span>=&gt;<span class="string">&#x27;小秋&#x27;</span> ,],</span><br><span class="line">	[<span class="string">&#x27;id&#x27;</span>=&gt;<span class="string">&#x27;3&#x27;</span> ,<span class="string">&#x27;name&#x27;</span>=&gt;<span class="string">&#x27;小周&#x27;</span> ,]</span><br><span class="line">	];</span><br><span class="line">	view::assign(<span class="string">&#x27;arr&#x27;</span>,<span class="variable">$arr</span>);</span><br><span class="line">	<span class="keyword">return</span> view::fetch();</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>view文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">             &#123;foreach $arr as $k=&gt;$v&#125; </span><br><span class="line">	             <span class="tag">&lt;<span class="name">div</span>&gt;</span> </span><br><span class="line">	             <span class="tag">&lt;<span class="name">span</span>&gt;</span>id:&#123;$v[&#x27;id&#x27;]&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">	             <span class="tag">&lt;<span class="name">span</span>&gt;</span>姓名:&#123;$v[&#x27;name&#x27;]&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">	              <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">              &#123;/foreach&#125; </span><br><span class="line">            <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>展示结果<br><img  src="https://img-blog.csdnimg.cn/20210527105612647.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><strong>volist循环标签</strong></p>
+<ul>
+<li>二维数组的结果输出</li>
+<li>name模板赋值的变量名称</li>
+<li>id当前的循环变量，可以随意起名</li>
+<li>key下标，从1开始，默认变量；</li>
+<li>offset开始行数</li>
+<li>length获取行数</li>
+<li>empty如果数据为空，显示此文字</li>
+</ul>
+<p>view文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    &#123;foreach $arr as $k=&gt;$v&#125; </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">span</span>&gt;</span>id:&#123;$v[&#x27;id&#x27;]&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">span</span>&gt;</span>姓名:&#123;$v[&#x27;name&#x27;]&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;/foreach&#125;</span><br><span class="line">	    &#123;volist name=&#x27;arr&#x27; id=&#x27;v&#x27; key=&#x27;k&#x27; offest=&#x27;1&#x27; length=&#x27;2&#x27;&#125;   </span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		    <span class="tag">&lt;<span class="name">span</span>&gt;</span>id1:&#123;$v[&#x27;id&#x27;]&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">		    <span class="tag">&lt;<span class="name">span</span>&gt;</span>姓名1:&#123;$v[&#x27;name&#x27;]&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">	     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      &#123;/volist&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>展示结果<br><img  src="https://img-blog.csdnimg.cn/20210527105812311.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><strong>for循环标签</strong></p>
+<p>for标签的用法和PHP语法非常接近语法</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;for start=&#x27;开始值&#x27; end=&#x27;结束值&#x27; comparison=&quot;&quot; step=&quot;步进值&quot; name=&quot;循环变量名&quot;&#125; </span><br><span class="line">&#123;/for&#125;</span><br></pre></td></tr></table></figure>
+
+<p>开始值，结束值，步进值和循环变量都可以支持变量，开始值和结束值是必须，其他是可选，comparison的默认值是It，name的默认值是i，步进值的默认值是1，举例如下：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">&#123;<span class="keyword">for</span> start=<span class="string">&quot;1&quot;</span> end=<span class="string">&quot;100&quot;</span>&#125; &#123;<span class="variable">$i</span>&#125; &#123;/<span class="keyword">for</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>解析后的代码就是</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">1</span>;<span class="variable">$i</span>&lt;<span class="number">100</span>;<span class="variable">$i</span>++)&#123;    <span class="keyword">echo</span> <span class="variable">$i</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>if判断标签</strong></p>
+<p>if标签的用法和PHP语法非常接近，用于条件判断‘</p>
+<p>Controller文件</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">BaseController</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">facade</span>\<span class="title">View</span>;  <span class="comment">//引用门面类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">BaseController</span> </span>&#123;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> <span class="string">&#x27;&lt;style type=&quot;text/css&quot;&gt;*&#123; padding: 0; margin: 0; &#125; div&#123; padding: 4px 48px;&#125; a&#123;color:#2E5CD5;cursor: pointer;text-decoration: none&#125; a:hover&#123;text-decoration:underline; &#125; body&#123; background: #fff; font-family: &quot;Century Gothic&quot;,&quot;Microsoft yahei&quot;; color: #333;font-size:18px;&#125; h1&#123; font-size: 100px; font-weight: normal; margin-bottom: 12px; &#125; p&#123; line-height: 1.6em; font-size: 42px &#125;&lt;/style&gt;&lt;div style=&quot;padding: 24px 48px;&quot;&gt; &lt;h1&gt;:) &lt;/h1&gt;&lt;p&gt; ThinkPHP V&#x27;</span> . \think\facade\App::version() . <span class="string">&#x27;&lt;br/&gt;&lt;span style=&quot;font-size:30px;&quot;&gt;14载初心不改 - 你值得信赖的PHP框架&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-size:25px;&quot;&gt;[ V6.0 版本由 &lt;a href=&quot;https://www.yisu.com/&quot; target=&quot;yisu&quot;&gt;亿速云&lt;/a&gt; 独家赞助发布 ]&lt;/span&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://tajs.qq.com/stats?sId=64890268&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://e.topthink.com/Public/static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;ee9b1aa918103c4fc&quot;&gt;&lt;/think&gt;&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"><span class="variable">$name</span> = <span class="string">&#x27;ThinkPHP6&#x27;</span></span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">&#x27;hello,&#x27;</span> . <span class="variable">$name</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> view::fetch();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> view::fetch(<span class="string">&#x27;index/login&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//模板变量</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">variable</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="comment">//使用助手函数进行赋值</span></span><br><span class="line"><span class="keyword">return</span>  view(<span class="string">&#x27;test&#x27;</span>,[</span><br><span class="line"><span class="string">&#x27;name&#x27;</span>=&gt;<span class="string">&#x27;moonloon&#x27;</span>, </span><br><span class="line"><span class="string">&#x27;qq&#x27;</span>=&gt;<span class="string">&#x27;1809620325&#x27;</span></span><br><span class="line">]);</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//运算符</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">Operator</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	view::assign(<span class="string">&#x27;a&#x27;</span>,<span class="number">520</span>);</span><br><span class="line">	view::assign(<span class="string">&#x27;b&#x27;</span>,<span class="number">13</span>);</span><br><span class="line">	<span class="keyword">return</span> view::fetch();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//模板函数</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">mouldefx</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         view::assign(<span class="string">&#x27;time&#x27;</span>,<span class="number">1604649103</span>); </span><br><span class="line">         view::assign(<span class="string">&#x27;num&#x27;</span>,<span class="number">520.1314</span>); </span><br><span class="line">         view::assign(<span class="string">&#x27;str&#x27;</span>,<span class="string">&#x27;Iloveyou&#x27;</span>);       </span><br><span class="line">         view::assign(<span class="string">&#x27;arr&#x27;</span>,[</span><br><span class="line">	         <span class="string">&#x27;小黄&#x27;</span>,</span><br><span class="line">	         <span class="string">&#x27;小虾&#x27;</span>,</span><br><span class="line">	         <span class="string">&#x27;小红&#x27;</span>,</span><br><span class="line">	         ]);</span><br><span class="line">	         <span class="keyword">return</span> view::fetch();</span><br><span class="line">         &#125; </span><br><span class="line">         <span class="comment">//if标签</span></span><br><span class="line">         <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">looplabel</span>(<span class="params"></span>)</span>&#123;         </span><br><span class="line">	         view::assign(<span class="string">&#x27;status&#x27;</span>,<span class="number">1</span>);         </span><br><span class="line">	         view::assign(<span class="string">&#x27;week&#x27;</span>,<span class="number">3</span>);</span><br><span class="line">	         <span class="keyword">return</span> view::fetch();</span><br><span class="line">         &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>view文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	   <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		    &#123;if $status==1&#125;</span><br><span class="line">		     <span class="tag">&lt;<span class="name">div</span>&gt;</span>开启<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;/if&#125;</span><br><span class="line">		    &#123;if $status==0&#125;</span><br><span class="line">		     <span class="tag">&lt;<span class="name">div</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;else/&#125;</span><br><span class="line">		    <span class="tag">&lt;<span class="name">div</span>&gt;</span>开启<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;/if&#125;</span><br><span class="line">		    &#123;if $week == 0&#125;</span><br><span class="line">		    <span class="tag">&lt;<span class="name">div</span>&gt;</span>星期天<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;elseif $week ==1/&#125;</span><br><span class="line">		    <span class="tag">&lt;<span class="name">div</span>&gt;</span>星期一<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;elseif $week ==2/&#125;</span><br><span class="line">		    <span class="tag">&lt;<span class="name">div</span>&gt;</span>星期二<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;elseif $week ==3/&#125;</span><br><span class="line">		    <span class="tag">&lt;<span class="name">div</span>&gt;</span>星期三<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;elseif $week ==4/&#125;</span><br><span class="line">		    <span class="tag">&lt;<span class="name">div</span>&gt;</span>星期四<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;elseif $week ==5/&#125;</span><br><span class="line">		    <span class="tag">&lt;<span class="name">div</span>&gt;</span>星期五<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;elseif $week ==6/&#125;</span><br><span class="line">		    <span class="tag">&lt;<span class="name">div</span>&gt;</span>星期六<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		    &#123;/if&#125; </span><br><span class="line">	    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>展示结果<br><img  src="https://img-blog.csdnimg.cn/20210527110432428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br><strong>switch标签</strong></p>
+<p>switch标签的用法和PHP语法非常接近，用于条件判断</p>
+<p>view文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	    &#123;switch $week&#125;</span><br><span class="line">		     &#123;case 0&#125;<span class="tag">&lt;<span class="name">div</span>&gt;</span>星期日<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#123;/case&#125;</span><br><span class="line">		     &#123;case 1&#125;<span class="tag">&lt;<span class="name">div</span>&gt;</span>星期一<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#123;/case&#125;</span><br><span class="line">		     &#123;case 2&#125;<span class="tag">&lt;<span class="name">div</span>&gt;</span>星期二<span class="tag">&lt;/<span class="name">div</span>&gt;</span>/case&#125;</span><br><span class="line">		     &#123;case 3&#125;<span class="tag">&lt;<span class="name">div</span>&gt;</span>星期三<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#123;/case&#125;</span><br><span class="line">		     &#123;case 4&#125;<span class="tag">&lt;<span class="name">div</span>&gt;</span>星期四<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#123;/case&#125;</span><br><span class="line">		     &#123;case 5&#125;<span class="tag">&lt;<span class="name">div</span>&gt;</span>星期五<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#123;/case&#125;</span><br><span class="line">		     &#123;case 6&#125;<span class="tag">&lt;<span class="name">div</span>&gt;</span>星期六<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#123;/case&#125;</span><br><span class="line">	     &#123;/switch&#125;</span><br><span class="line">     <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>展示结果<br><img  src="https://img-blog.csdnimg.cn/20210527110553560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span><br>其他标签(参考tp5手册)</p>
+<ul>
+<li>条件标签</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>标签</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>in</td>
+<td>判断变量是否存在某些值</td>
+</tr>
+<tr>
+<td>notin</td>
+<td>判断变量是否不存在某些值</td>
+</tr>
+<tr>
+<td>between</td>
+<td>判断变量是否存在某些范围值</td>
+</tr>
+<tr>
+<td>notbetween</td>
+<td>判断变量是否不存在某些范围值</td>
+</tr>
+<tr>
+<td>present</td>
+<td>判断某个变量是否 已定义</td>
+</tr>
+<tr>
+<td>notpresent</td>
+<td>判断某个变量是否 未定义</td>
+</tr>
+<tr>
+<td>empty</td>
+<td>判断某个变量是否为空</td>
+</tr>
+<tr>
+<td>notempty</td>
+<td>判断某个变量是否不为空</td>
+</tr>
+<tr>
+<td>defined</td>
+<td>判断某个常量是否已定义</td>
+</tr>
+<tr>
+<td>notdefined</td>
+<td>判断某个变量是否未定义</td>
+</tr>
+</tbody></table>
+<ul>
+<li>比较标签</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>标签</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eq或equal</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>neq或notequal</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>gt</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>It</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>elt</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>heq</td>
+<td>恒等于</td>
+</tr>
+<tr>
+<td>nheq</td>
+<td>不恒等于</td>
+</tr>
+</tbody></table>
+<p>使用原生PHP语句</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">&#123;php&#125; <span class="keyword">echo</span> <span class="string">&quot;观星&quot;</span>;&#123;/php&#125;</span><br></pre></td></tr></table></figure>
+<p>展示结果<br><img  src="https://img-blog.csdnimg.cn/20210527110646447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tha2FrYW9vXw==,size_16,color_FFFFFF,t_70#pic_center"  ><span class="image-caption">在这里插入图片描述</span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>第二课  检索数据</title>
+    <url>/2021/09/05/%E7%AC%AC%E4%BA%8C%E8%AF%BE%C2%A0_%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h1 id="第二课-检索数据"><a href="#第二课-检索数据" class="headerlink" title="第二课  检索数据"></a>第二课  检索数据</h1><h2 id="一、SELECT-语句"><a href="#一、SELECT-语句" class="headerlink" title="一、SELECT 语句"></a>一、SELECT 语句</h2><p>SQL语句是是由于简单的英语单词构成的。这些单词称为关键词，每个SQL语句都是由一个或者多个关键词。最经常使用的SQL语句大概就是SELECT语句。它的用途就是从一个表或者多个表中检索信息。</p>
+<h3 id="关键词（keyword）"><a href="#关键词（keyword）" class="headerlink" title="关键词（keyword）"></a>关键词（keyword）</h3><p>作为SQL组成部分的保留字。关键词不能用作表或列的名字。</p>
+<p>为了使用SELECT检索表的数据，必须至少给出两条信息</p>
+<ol>
+<li><p>想选择什么</p>
+</li>
+<li><p>从什么地方选择</p>
+</li>
+</ol>
+<h2 id="二、检索单个列"><a href="#二、检索单个列" class="headerlink" title="二、检索单个列"></a>二、检索单个列</h2><p>我们将从简单的SQL SELECT语句讲起，此语句如下所示：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> prod_name</span><br><span class="line"><span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>上述语句利用SELECT语句从Products表中检索一个名为prod_name的列。所需的列名写在SELECT关键字之后，FROM关键字指出从哪个表中检索数据。</p>
+<p>如果没有明确排序查询结果，则返回的数据没有特定的顺序。</p>
+<p><strong>提示：</strong> </p>
+<p>结束SQL语句必须以分号（；）分隔。多数DBMS不需要在单条SQL语句后加上分号，但也有DBMS可能必须在SQL语句后加上分号。事实上，加上分号也肯定没有坏处。</p>
+<p>SQL语句和大小写。请注意SQL语句不区分大小写，但是表名，列名，和值可能有所不同这有赖于具体的DBMS及其如何配置。</p>
+<p>使用空格，在处理SQL语句时，其中所有空格都被忽略。SQL语句可以写成长长的一行，也可以分写在多行。多数SQL开发人员认为，将SQL语句分成多行更容易阅读和调试。</p>
+<h2 id="三、检索多个列"><a href="#三、检索多个列" class="headerlink" title="三、检索多个列"></a>三、检索多个列</h2><p>要想在一个表中检索多个列，仍然使用相同的SELECT语句。唯一不同的是必须在SELECT关键词后给出多个列名，列名之间必须以逗号分隔。</p>
+<p>提示：</p>
+<p>在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加上了逗号，将出现错误。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> prod_id,prod_name,prod_price</span><br><span class="line"><span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>说明：数据表示</strong> </p>
+<p>SQL语句一般返回原始的、无格式的数据，不同的DBMS和客户端显示数据的方式略有不同（如对齐格式不同，小数位数不同）数据的格式化是表示问题，而不是检索问题。因此，如何表示一般会在显示该数据的应用程序中规定。通常很少直接使用实际检索出的数据(没有应用程序提供的格式)</p>
+<h2 id="三、检索所有列"><a href="#三、检索所有列" class="headerlink" title="三、检索所有列"></a>三、检索所有列</h2><p>除了指定所需的列外（如上所述，一列或多列），SELECT语句还可以检索所有的列而不必逐个列出它们。在实际列名的位置使用星号（*）通配符可以做到这点，如下所示</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果给定一个通配符（*），则返回表中所有列。列中的顺序一般是表中出现的物理顺序，但并不总是如此。不过，SQL数据很少直接显示（通常，数据返回给应用程序，根据需要进行格式化，再表示出来）</p>
+<p>注意：使用通配符</p>
+<p>一般而言，除非你确实需要表中的每一个列，否则最好别使用*通配符。虽然使用通配符能让你自己省事，不用明确列出所出列，但检索不要的列通常会降低检索速度和应用程序的性能。</p>
+<p>提示：检索未知列</p>
+<p>使用通配符有一个大优点。由于不明确指出列名（因为星号检索每一列），所以能检索出名字未知的列。</p>
+<p>四、检索不同的值</p>
+<p>如前所述，SELECT语句返回所有匹配的值，但是你不希望每个值每次都出现，该怎么办呢？例如，你想检索Products表中所有产品提供商品的ID：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  vend_id <span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>这样检索数据会检索所有的数据行，那么如何检索出不同的值。办法就是DISTINCT关键字，顾名思义，它指示数据库只返回不同的值。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> vend_id <span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果使用DISTINCT关键字，它必须直接放在列名的前面。</p>
+<p>注意：不能部分使用DISTINCT</p>
+<p>DISTINCT关键字作用于所有的列，不仅仅是跟在其后的那一列，例如，你指定SELECT DISTINCT vend_id,prod_price,则9行里的6行都会被检索出来，因为指定的两列组合起来有6个不同的结果。</p>
+<h2 id="四、限制结果"><a href="#四、限制结果" class="headerlink" title="四、限制结果"></a>四、限制结果</h2><p>SELECT语句返回指定表中所有匹配的行，很可能是每一行。如果你只想返回第一行或者一定数量的行，该怎么办呢？这是可行的，然而遗憾的是，各种数据库中这一SQL实现并不相同。</p>
+<p>在SQL Server中使用SELECT时，可以使用TOP关键字来限制最多返回多少行，如下所示</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> TOP <span class="number">5</span> prod_name <span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果你使用的是DB2，就得使用下面这样的DB2特有的SQL语句：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> prod_name <span class="keyword">FROM</span> Products <span class="keyword">FETCH</span> <span class="keyword">FIRST</span> <span class="number">5</span> <span class="keyword">ROWS</span> <span class="keyword">ONLY</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果你使用Oracle，需要基于ROWNUM(行计数器)来计算行，像这样</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  prod_name <span class="keyword">FROM</span>  Products <span class="keyword">WHERE</span> ROWNUM <span class="operator">&lt;=</span><span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果你使用MySQL，MariaDB，PostgreSQL或者SQLLite，需要使用LIMIT子句，像这样：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> prod_name <span class="keyword">FROM</span> Products LIMIT <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>LIMIT 5指示MySQL等DBMS返回不超过5行的数据。为了得到后面的5行数据，需要指定从哪儿开始以及检索的行数，第二个数字是指是指哪儿开始以及检索的行数，像这样：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> prod_name <span class="keyword">FROM</span> Products LIMIT <span class="number">5</span> <span class="keyword">OFFSET</span> <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>分析：LIMIT 5 OFFSET 5 指示MySQL等DBMS返回从第5行起的5行数据。</p>
+<p>第一个数字是检索的行数，第二个数字是指从哪儿开始。这个语句的输出是:</p>
+<p>所以，LIMIT指定返回的行数，LIMIT带的OFFSET指定从哪里开始。在我们的例子中，Products表中只有9种产品，所以LIMIT 5 OFFSET 只返回了4行数据（因为没有第五行）</p>
+<p>注意:第0行</p>
+<p>第一个被检索的行是第0行，而不是第一行。因此，LIMIT 5 OFFSET 5 只返回了4行数据。（因为没有第五行）</p>
+<p>提示:MySQL,MariaDB和SQLite捷径</p>
+<p>MySQL，MariaDB和SQLite可以把LIMIT 4 OFFSET 3简化为  LIMIT 3,4 。使用这个语法，逗号之前的值对应OFFSET，逗号之后的值对应LIMIT（反着的，要小心）</p>
+<p>说明:并非所有的SQL实现都一样</p>
+<p>SQL虽然通常都有相当一致的实现，但你不能想当然的认为它总是这样。非常基本的语句往往总是相通的，但较复杂的语句就不同的。</p>
+<h2 id="五、使用注释"><a href="#五、使用注释" class="headerlink" title="五、使用注释"></a>五、使用注释</h2><p>可以看到，SQL语句是由DBMS处理的指令。如果你希望包括不进行处理和执行的文本，该怎么办呢，我们可以添加注释来处理这些问题。</p>
+<p>注释使用：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 这是一条注释</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 这也是一条注释</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*  </span></span><br><span class="line"><span class="comment">  这是多条注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+  </entry>
+</search>
