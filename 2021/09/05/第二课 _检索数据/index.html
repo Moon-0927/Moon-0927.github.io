@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cn" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>第二课  检索数据 - 我在写诗</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="第二课  检索数据一、SELECT 语句SQL语句是是...">
+  <meta name="author" content="Moon">
+  <link rel="icon" href="/images/icons/favicon-16x16new.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32new.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">第二课  检索数据</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/20170604230837_vXrwQ.thumb.1000_0.jpeg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">第二课  检索数据</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>九月 05, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2850</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h1 id="第二课-检索数据"><a href="#第二课-检索数据" class="headerlink" title="第二课  检索数据"></a>第二课  检索数据</h1><h2 id="一、SELECT-语句"><a href="#一、SELECT-语句" class="headerlink" title="一、SELECT 语句"></a>一、SELECT 语句</h2><p>SQL语句是是由于简单的英语单词构成的。这些单词称为关键词，每个SQL语句都是由一个或者多个关键词。最经常使用的SQL语句大概就是SELECT语句。它的用途就是从一个表或者多个表中检索信息。</p>
+<h3 id="关键词（keyword）"><a href="#关键词（keyword）" class="headerlink" title="关键词（keyword）"></a>关键词（keyword）</h3><p>作为SQL组成部分的保留字。关键词不能用作表或列的名字。</p>
+<p>为了使用SELECT检索表的数据，必须至少给出两条信息</p>
+<ol>
+<li><p>想选择什么</p>
+</li>
+<li><p>从什么地方选择</p>
+</li>
+</ol>
+<h2 id="二、检索单个列"><a href="#二、检索单个列" class="headerlink" title="二、检索单个列"></a>二、检索单个列</h2><p>我们将从简单的SQL SELECT语句讲起，此语句如下所示：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> prod_name</span><br><span class="line"><span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>上述语句利用SELECT语句从Products表中检索一个名为prod_name的列。所需的列名写在SELECT关键字之后，FROM关键字指出从哪个表中检索数据。</p>
+<p>如果没有明确排序查询结果，则返回的数据没有特定的顺序。</p>
+<p><strong>提示：</strong> </p>
+<p>结束SQL语句必须以分号（；）分隔。多数DBMS不需要在单条SQL语句后加上分号，但也有DBMS可能必须在SQL语句后加上分号。事实上，加上分号也肯定没有坏处。</p>
+<p>SQL语句和大小写。请注意SQL语句不区分大小写，但是表名，列名，和值可能有所不同这有赖于具体的DBMS及其如何配置。</p>
+<p>使用空格，在处理SQL语句时，其中所有空格都被忽略。SQL语句可以写成长长的一行，也可以分写在多行。多数SQL开发人员认为，将SQL语句分成多行更容易阅读和调试。</p>
+<h2 id="三、检索多个列"><a href="#三、检索多个列" class="headerlink" title="三、检索多个列"></a>三、检索多个列</h2><p>要想在一个表中检索多个列，仍然使用相同的SELECT语句。唯一不同的是必须在SELECT关键词后给出多个列名，列名之间必须以逗号分隔。</p>
+<p>提示：</p>
+<p>在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加上了逗号，将出现错误。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> prod_id,prod_name,prod_price</span><br><span class="line"><span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>说明：数据表示</strong> </p>
+<p>SQL语句一般返回原始的、无格式的数据，不同的DBMS和客户端显示数据的方式略有不同（如对齐格式不同，小数位数不同）数据的格式化是表示问题，而不是检索问题。因此，如何表示一般会在显示该数据的应用程序中规定。通常很少直接使用实际检索出的数据(没有应用程序提供的格式)</p>
+<h2 id="三、检索所有列"><a href="#三、检索所有列" class="headerlink" title="三、检索所有列"></a>三、检索所有列</h2><p>除了指定所需的列外（如上所述，一列或多列），SELECT语句还可以检索所有的列而不必逐个列出它们。在实际列名的位置使用星号（*）通配符可以做到这点，如下所示</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果给定一个通配符（*），则返回表中所有列。列中的顺序一般是表中出现的物理顺序，但并不总是如此。不过，SQL数据很少直接显示（通常，数据返回给应用程序，根据需要进行格式化，再表示出来）</p>
+<p>注意：使用通配符</p>
+<p>一般而言，除非你确实需要表中的每一个列，否则最好别使用*通配符。虽然使用通配符能让你自己省事，不用明确列出所出列，但检索不要的列通常会降低检索速度和应用程序的性能。</p>
+<p>提示：检索未知列</p>
+<p>使用通配符有一个大优点。由于不明确指出列名（因为星号检索每一列），所以能检索出名字未知的列。</p>
+<p>四、检索不同的值</p>
+<p>如前所述，SELECT语句返回所有匹配的值，但是你不希望每个值每次都出现，该怎么办呢？例如，你想检索Products表中所有产品提供商品的ID：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  vend_id <span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>这样检索数据会检索所有的数据行，那么如何检索出不同的值。办法就是DISTINCT关键字，顾名思义，它指示数据库只返回不同的值。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> vend_id <span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果使用DISTINCT关键字，它必须直接放在列名的前面。</p>
+<p>注意：不能部分使用DISTINCT</p>
+<p>DISTINCT关键字作用于所有的列，不仅仅是跟在其后的那一列，例如，你指定SELECT DISTINCT vend_id,prod_price,则9行里的6行都会被检索出来，因为指定的两列组合起来有6个不同的结果。</p>
+<h2 id="四、限制结果"><a href="#四、限制结果" class="headerlink" title="四、限制结果"></a>四、限制结果</h2><p>SELECT语句返回指定表中所有匹配的行，很可能是每一行。如果你只想返回第一行或者一定数量的行，该怎么办呢？这是可行的，然而遗憾的是，各种数据库中这一SQL实现并不相同。</p>
+<p>在SQL Server中使用SELECT时，可以使用TOP关键字来限制最多返回多少行，如下所示</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> TOP <span class="number">5</span> prod_name <span class="keyword">FROM</span> Products;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果你使用的是DB2，就得使用下面这样的DB2特有的SQL语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> prod_name <span class="keyword">FROM</span> Products <span class="keyword">FETCH</span> <span class="keyword">FIRST</span> <span class="number">5</span> <span class="keyword">ROWS</span> <span class="keyword">ONLY</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果你使用Oracle，需要基于ROWNUM(行计数器)来计算行，像这样</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  prod_name <span class="keyword">FROM</span>  Products <span class="keyword">WHERE</span> ROWNUM <span class="operator">&lt;=</span><span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>如果你使用MySQL，MariaDB，PostgreSQL或者SQLLite，需要使用LIMIT子句，像这样：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> prod_name <span class="keyword">FROM</span> Products LIMIT <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>LIMIT 5指示MySQL等DBMS返回不超过5行的数据。为了得到后面的5行数据，需要指定从哪儿开始以及检索的行数，第二个数字是指是指哪儿开始以及检索的行数，像这样：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> prod_name <span class="keyword">FROM</span> Products LIMIT <span class="number">5</span> <span class="keyword">OFFSET</span> <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p>分析：LIMIT 5 OFFSET 5 指示MySQL等DBMS返回从第5行起的5行数据。</p>
+<p>第一个数字是检索的行数，第二个数字是指从哪儿开始。这个语句的输出是:</p>
+<p>所以，LIMIT指定返回的行数，LIMIT带的OFFSET指定从哪里开始。在我们的例子中，Products表中只有9种产品，所以LIMIT 5 OFFSET 只返回了4行数据（因为没有第五行）</p>
+<p>注意:第0行</p>
+<p>第一个被检索的行是第0行，而不是第一行。因此，LIMIT 5 OFFSET 5 只返回了4行数据。（因为没有第五行）</p>
+<p>提示:MySQL,MariaDB和SQLite捷径</p>
+<p>MySQL，MariaDB和SQLite可以把LIMIT 4 OFFSET 3简化为  LIMIT 3,4 。使用这个语法，逗号之前的值对应OFFSET，逗号之后的值对应LIMIT（反着的，要小心）</p>
+<p>说明:并非所有的SQL实现都一样</p>
+<p>SQL虽然通常都有相当一致的实现，但你不能想当然的认为它总是这样。非常基本的语句往往总是相通的，但较复杂的语句就不同的。</p>
+<h2 id="五、使用注释"><a href="#五、使用注释" class="headerlink" title="五、使用注释"></a>五、使用注释</h2><p>可以看到，SQL语句是由DBMS处理的指令。如果你希望包括不进行处理和执行的文本，该怎么办呢，我们可以添加注释来处理这些问题。</p>
+<p>注释使用：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 这是一条注释</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 这也是一条注释</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  </span></span><br><span class="line"><span class="comment">  这是多条注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>Moon</li>
+    <li><strong>本文链接：</strong><a href="http://www.moonlinku.com/2021/09/05/%E7%AC%AC%E4%BA%8C%E8%AF%BE%C2%A0_%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/index.html" title="http:&#x2F;&#x2F;www.moonlinku.com&#x2F;2021&#x2F;09&#x2F;05&#x2F;%E7%AC%AC%E4%BA%8C%E8%AF%BE%C2%A0_%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE&#x2F;index.html">http:&#x2F;&#x2F;www.moonlinku.com&#x2F;2021&#x2F;09&#x2F;05&#x2F;%E7%AC%AC%E4%BA%8C%E8%AF%BE%C2%A0_%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2021/09/02/ThinkPHP6%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/">ThinkPHP6模板引擎<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AF%BE-%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE"><span class="toc-text">第二课  检索数据</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81SELECT-%E8%AF%AD%E5%8F%A5"><span class="toc-text">一、SELECT 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D%EF%BC%88keyword%EF%BC%89"><span class="toc-text">关键词（keyword）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%A3%80%E7%B4%A2%E5%8D%95%E4%B8%AA%E5%88%97"><span class="toc-text">二、检索单个列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A3%80%E7%B4%A2%E5%A4%9A%E4%B8%AA%E5%88%97"><span class="toc-text">三、检索多个列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A3%80%E7%B4%A2%E6%89%80%E6%9C%89%E5%88%97"><span class="toc-text">三、检索所有列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%99%90%E5%88%B6%E7%BB%93%E6%9E%9C"><span class="toc-text">四、限制结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E4%BD%BF%E7%94%A8%E6%B3%A8%E9%87%8A"><span class="toc-text">五、使用注释</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=1809620325 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://github.com/Moon-0927 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:moon00927@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
