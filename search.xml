@@ -841,4 +841,53 @@
 
 ]]></content>
   </entry>
+  <entry>
+    <title>第三课 检索排序数据</title>
+    <url>/2021/09/06/%E7%AC%AC%E4%B8%89%E8%AF%BE_%E6%A3%80%E7%B4%A2%E6%8E%92%E5%BA%8F%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h1 id="第三课-检索排序数据"><a href="#第三课-检索排序数据" class="headerlink" title="第三课 检索排序数据"></a>第三课 检索排序数据</h1><p>这一课讲授如何使用SELECT语句的ORDER BY子句，根据需要排序检索出的数据。</p>
+<h2 id="一、排序数据"><a href="#一、排序数据" class="headerlink" title="一、排序数据"></a>一、排序数据</h2><p>正如上一课所述，下面的SQL语句返回某个数据库表的单个列。但是它的输出，并没有固定的顺序</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><code class="hljs PHP">SELECT prod_name <span class="hljs-keyword">FROM</span> Products;<br></code></pre></td></tr></table></figure>
+
+
+<p>其实，检索出的数据并不是随机显示的。如果不排序，数据一般将以它在表中出现的顺序显示，这有可能是数据最初添加到表中的顺序。但是，如果数据随后进行过更新或者删除，那么这个顺序将会受到DBMS重用回收存储空间的方式的影响。关系数据库设计理论认为，如果不明确规定排序顺序，则不应该假定检索出的数据的顺序有任何意义。</p>
+<p><strong>子句（caluse）</strong> </p>
+<p>SQL语句由子句构成，有些字句是必需的，有些则是可选的。一个子句通常由一个关键词加上所提供的数据组成。子句的例子有我们在前一课看到的SELECT语句的FROM子句。</p>
+<p>为了明确地排序用SELECT语句检索出的数据，可使用ORDER BY 子句。ORDER BY 子句取一个或多个列的名字，据此对输出进行排序，请看下面的例子</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><code class="hljs PHP">SELECT prod_name <span class="hljs-keyword">FROM</span> Products ORDER BY prod_name;<br></code></pre></td></tr></table></figure>
+
+
+<p>除了指示DBMS软件对prod_name列以字母顺序排列顺序数据的ORDER BY子句外，这条语句与前面的语句相同。</p>
+<p>注意: ORDER BY 子句的位置</p>
+<p>在指定一条ORDER BY子句是，应该保证它是SELECT语句中最后一条子句。如果它不是最后的子句，将会出错。</p>
+<p>提示: 通过非选择列进行排序</p>
+<p>通常，ORDER BY 子句中使用的列将是为显示而选择的列。但是，实际上并不一定要这样，用非检索的列排序数据是完全合法的。</p>
+<h2 id="二、按多个列排序"><a href="#二、按多个列排序" class="headerlink" title="二、按多个列排序"></a>二、按多个列排序</h2><p>经常需要按不止一个列进行数据排序。例如，如果要显示雇员信息，可能希望按姓和名排序（首先按姓排序，然后在每个姓中再按名排序），如果多个雇员有相同的姓，这样做很有用。</p>
+<p>要按多个列排序，只须指定这些列名，列名之间用逗号分开即可（就像选择多个列一样）</p>
+<p>下面代码检索三个列，并按照其中两个列对结果进行排序—首先按照价格，然后按照名称排序</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">SELECT</span> prod_id,prod_price,prod_name <span class="hljs-keyword">FROM</span> Products <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> prod_price,prod_name;<br></code></pre></td></tr></table></figure>
+
+
+<p>重要的是理解在按多个列排序时，排序的顺序完全按规定进行。换句话说，对于上述例子中的输出，仅在多个行具有相同的prod_price值时才对产品按prod_name进行排序。如果prod_price列中的所有值都是唯一的，则不会按照prod_name排序。</p>
+<h2 id="三、按列位置排序"><a href="#三、按列位置排序" class="headerlink" title="三、按列位置排序"></a>三、按列位置排序</h2><p>除了能用列名指出排序顺序外，ORDER BY 还支持按相对列位置进行排序。为理解这一个内容，我们来看这个例子</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">SELECT</span> prod_id,prod_price,prod_name <span class="hljs-keyword">FROM</span> Products <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> <span class="hljs-number">2</span>,<span class="hljs-number">3</span>;<br></code></pre></td></tr></table></figure>
+
+
+<p>可以看到，这里的输出与上面的查询相同，不同之处在于ORDER BY 子句。SELECT清单中指定的是选择列的相对位置而不是列名。ORDER BY 2表示按SELECT清单的第二个列prod_price进行排序。ORDER BY 2,3表示先按prod_price,再按prod_name进行排序。</p>
+<p>这一技术的主要好处在于不用重新输入列名。但它也有缺点。首先，不明确给出列名有可能造成错用列名排序。其次，在对SELECT清单进行更改时容易错误地对数据进行排序（忘记对ORDER BY子句做相对应的改动）最近，如果进行排序的列不在SELECT清单中，显然不能使用这项技术。</p>
+<p>提示:按非选择列进行排序</p>
+<p>显然，当根据不出现在SELECT清单中的列进行排序时，不能采用这项技术。但是，如果有必要，可以混合使用实际列名和相对列位置。</p>
+<h2 id="四、指定排序方向"><a href="#四、指定排序方向" class="headerlink" title="四、指定排序方向"></a>四、指定排序方向</h2><p>数据排序不限于升序排序（从A到Z），这只是默认的排序顺序，还可以使用ORDER BY子句进行降序（从Z到A）排序。为了进行降序排序，必须指定DESC关键字。</p>
+<p>下面的例子以价格降序来排序产品</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">SELECT</span> prod_id,prod_price,prod_name <span class="hljs-keyword">FROM</span> Products <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> prod_price <span class="hljs-keyword">DESC</span>;<br></code></pre></td></tr></table></figure>
+
+
+<p>如果打算用多个列排序，该怎么办？下面的例子以降序排列产品(最贵的排在前面)，再加上产品名:</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">SELECT</span> prod_id,prod_price,prod_name <span class="hljs-keyword">FROM</span> Products <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> prod_price <span class="hljs-keyword">DESC</span>,prod_name;<br></code></pre></td></tr></table></figure>
+
+
+<p>DESC关键字，只应用到直接位于其前面的列名。在上例中，只对prod_price列指定DESC，而prod_name列不指定。因此，prod_price列以降序排序，而prod_name列（在每个价格内）仍然按标准的升序排序。</p>
+<p>警告:在多个列上进行排序降序，必须对每一列指定DESC关键字。</p>
+<p>在不指定升序降序关键字的情况下默认是升序ASC</p>
+]]></content>
+  </entry>
 </search>
